@@ -1,202 +1,144 @@
-// Smooth scrolling for navigation links
+/* =========================
+   SMOOTH ANCHOR SCROLL
+========================= */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Navbar background on scroll
-const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-        navbar.style.boxShadow = 'none';
+  anchor.addEventListener('click', e => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    
-    lastScroll = currentScroll;
+  });
 });
 
-// Duplicate gallery images for infinite scroll effect
-const galleryContainer = document.getElementById('galleryContainer');
-const galleryImages = galleryContainer.innerHTML;
-galleryContainer.innerHTML += galleryImages; // Duplicate images
+/* =========================
+   NAVBAR HIDE / SHOW
+========================= */
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
 
-// Parallax effect for gradient circles
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const circles = document.querySelectorAll('.gradient-circle');
-    
-    circles.forEach((circle, index) => {
-        const speed = (index + 1) * 0.1;
-        circle.style.transform = `translateY(${scrolled * speed}px)`;
-    });
+  const current = window.pageYOffset;
+
+  if (current <= 0) {
+    navbar.style.transform = 'translateY(0)';
+  } else if (current > lastScroll && current > 100) {
+    navbar.style.transform = 'translateY(-100%)';
+  } else {
+    navbar.style.transform = 'translateY(0)';
+  }
+
+  lastScroll = current;
 });
 
-// Trainer tiles parallax effect
+/* =========================
+   AUTO SCROLL GALLERY
+========================= */
+const gallery = document.getElementById('galleryContainer');
+
+if (gallery) {
+  gallery.innerHTML += gallery.innerHTML;
+
+  let x = 0;
+  const speed = 0.5;
+  let pause = false;
+
+  gallery.addEventListener('mouseenter', () => pause = true);
+  gallery.addEventListener('mouseleave', () => pause = false);
+
+  function animate() {
+    if (!pause) {
+      x -= speed;
+      if (Math.abs(x) >= gallery.scrollWidth / 2) x = 0;
+      gallery.style.transform = `translateX(${x}px)`;
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+/* =========================
+   TRAINER PARALLAX
+========================= */
 const trainerTiles = document.querySelectorAll('.trainer-tile');
 
 window.addEventListener('scroll', () => {
-    const scrollPosition = window.pageYOffset;
-    
-    trainerTiles.forEach((tile, index) => {
-        const speed = (index % 2 === 0) ? 0.05 : -0.05;
-        tile.style.transform = `translateY(${scrollPosition * speed}px)`;
-    });
+  const scrolled = window.pageYOffset;
+  trainerTiles.forEach((tile, i) => {
+    const speed = i % 2 === 0 ? 0.3 : -0.3;
+    tile.style.transform = `translateY(${scrolled * speed * 0.1}px)`;
+  });
 });
 
-// Hover effect for trainer tiles
-trainerTiles.forEach(tile => {
-    tile.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1) rotate(3deg)';
-        this.style.zIndex = '10';
-    });
-    
-    tile.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1) rotate(0deg)';
-        this.style.zIndex = '1';
-    });
+/* =========================
+   GRADIENT CIRCLE MOUSE MOVE
+========================= */
+const circles = document.querySelectorAll('.gradient-circle');
+let mx = 0, my = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX / window.innerWidth - 0.5;
+  my = e.clientY / window.innerHeight - 0.5;
 });
 
-// Card animation on scroll
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -100px 0px'
-};
+function animateCircles() {
+  circles.forEach((c, i) => {
+    c.style.transform = `translate(${mx * 40 * (i + 1)}px, ${my * 40 * (i + 1)}px)`;
+  });
+  requestAnimationFrame(animateCircles);
+}
+if (circles.length) animateCircles();
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+/* =========================
+   FOOTER WAVE PARALLAX
+========================= */
+const footer = document.getElementById('footerWave');
+const layers = document.querySelectorAll('.footer-layer');
+
+window.addEventListener('scroll', () => {
+  if (!footer) return;
+
+  const rect = footer.getBoundingClientRect();
+  const vh = window.innerHeight;
+
+  if (rect.top < vh && rect.bottom > 0) {
+    const progress = 1 - rect.top / vh;
+    layers.forEach(layer => {
+      let speed = 0.2;
+      if (layer.classList.contains('mid')) speed = 0.35;
+      if (layer.classList.contains('fast')) speed = 0.55;
+      layer.style.transform = `translateY(${progress * 60 * speed}px)`;
     });
-}, observerOptions);
-
-// Observe all cards and plan cards
-document.querySelectorAll('.card, .plan-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease-out';
-    observer.observe(card);
+  }
 });
 
-// Button click effects
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function(e) {
-        // Create ripple effect
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.style.position = 'absolute';
-        ripple.style.borderRadius = '50%';
-        ripple.style.background = 'rgba(255, 255, 255, 0.5)';
-        ripple.style.transform = 'scale(0)';
-        ripple.style.animation = 'ripple 0.6s ease-out';
-        ripple.style.pointerEvents = 'none';
-        
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(ripple);
-        
-        setTimeout(() => ripple.remove(), 600);
-    });
-});
-
-// Add CSS for ripple animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
+/* =========================
+   SCROLL TO TOP BUTTON
+========================= */
+const scrollBtn = document.createElement('button');
+scrollBtn.innerHTML = '↑';
+scrollBtn.style.cssText = `
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ff1f1f;
+  color: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 999;
 `;
-document.head.appendChild(style);
+document.body.appendChild(scrollBtn);
 
-// Video autoplay with fallback
-const heroVideo = document.querySelector('.hero-video');
-if (heroVideo) {
-    heroVideo.play().catch(() => {
-        console.log('Video autoplay was prevented');
-    });
-}
+scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-// Lazy loading for images
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src || img.src;
-                img.classList.add('loaded');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
+window.addEventListener('scroll', () => {
+  scrollBtn.style.opacity = window.scrollY > 500 ? '1' : '0';
+});
 
-    document.querySelectorAll('img').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
 
-// Scroll progress indicator
-const createScrollIndicator = () => {
-    const indicator = document.createElement('div');
-    indicator.style.position = 'fixed';
-    indicator.style.top = '0';
-    indicator.style.left = '0';
-    indicator.style.height = '3px';
-    indicator.style.background = 'linear-gradient(90deg, #ff6b6b, #ff4757)';
-    indicator.style.zIndex = '9999';
-    indicator.style.transition = 'width 0.1s';
-    document.body.appendChild(indicator);
-    
-    window.addEventListener('scroll', () => {
-        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (window.pageYOffset / windowHeight) * 100;
-        indicator.style.width = scrolled + '%';
-    });
-};
-
-createScrollIndicator();
-
-// Smooth scroll reveal for sections
-const revealSections = () => {
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (sectionTop < windowHeight * 0.8) {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
-        }
-    });
-};
-
-window.addEventListener('scroll', revealSections);
-revealSections(); // Initial check
-
-console.log('🏋️ Cult.fit Homepage Loaded! Ready to break a sweat? 💪');
