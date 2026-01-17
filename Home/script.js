@@ -32,7 +32,17 @@ window.addEventListener('scroll', () => {
 });
 
 /* =========================
-   AUTO SCROLL GALLERY
+   HAMBURGER MENU
+========================= */
+const burger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+burger?.addEventListener('click', () => {
+  navLinks.classList.toggle('mobile-active');
+});
+
+/* =========================
+   IMAGE GALLERY AUTO SCROLL
 ========================= */
 const gallery = document.getElementById('galleryContainer');
 
@@ -41,34 +51,37 @@ if (gallery) {
 
   let x = 0;
   const speed = 0.5;
-  let pause = false;
 
-  gallery.addEventListener('mouseenter', () => pause = true);
-  gallery.addEventListener('mouseleave', () => pause = false);
-
-  function animate() {
-    if (!pause) {
-      x -= speed;
-      if (Math.abs(x) >= gallery.scrollWidth / 2) x = 0;
-      gallery.style.transform = `translateX(${x}px)`;
-    }
-    requestAnimationFrame(animate);
+  function animateGallery() {
+    x -= speed;
+    if (Math.abs(x) >= gallery.scrollWidth / 2) x = 0;
+    gallery.style.transform = `translateX(${x}px)`;
+    requestAnimationFrame(animateGallery);
   }
-  animate();
+
+  animateGallery();
 }
 
-/* =========================
-   TRAINER PARALLAX
-========================= */
-const trainerTiles = document.querySelectorAll('.trainer-tile');
+/* ==================================================
+   🔥 TRAINER SCROLL-BASED MOTION (FINAL)
+================================================== */
 
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  trainerTiles.forEach((tile, i) => {
-    const speed = i % 2 === 0 ? 0.3 : -0.3;
-    tile.style.transform = `translateY(${scrolled * speed * 0.1}px)`;
+const trainerItems = document.querySelectorAll('.trainer-item');
+
+function trainerScrollMotion() {
+  const scrollY = window.scrollY;
+
+  trainerItems.forEach((item, index) => {
+    const direction = index % 2 === 0 ? -1 : 1;
+
+    // control intensity here
+    const offset = scrollY * 0.08 * direction;
+
+    item.style.transform = `translateY(${offset}px)`;
   });
-});
+}
+
+window.addEventListener('scroll', trainerScrollMotion);
 
 /* =========================
    GRADIENT CIRCLE MOUSE MOVE
@@ -103,6 +116,7 @@ window.addEventListener('scroll', () => {
 
   if (rect.top < vh && rect.bottom > 0) {
     const progress = 1 - rect.top / vh;
+
     layers.forEach(layer => {
       let speed = 0.2;
       if (layer.classList.contains('mid')) speed = 0.35;
@@ -141,4 +155,15 @@ window.addEventListener('scroll', () => {
   scrollBtn.style.opacity = window.scrollY > 500 ? '1' : '0';
 });
 
+/* =========================
+   BOOK NOW BUTTON
+========================= */
+document.querySelectorAll('[data-scroll]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.getElementById(btn.dataset.scroll);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
 
