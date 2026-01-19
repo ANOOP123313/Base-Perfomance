@@ -1,355 +1,416 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cult.fit - Make Fitness Fun & Easy</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Base Performance.fit - A Fitness Movement Worth Breaking a Sweat For
+    </title>
 
     <!-- CSS FILE -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="nav-container">
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
         <!-- Left -->
         <div class="nav-left">
-            <!-- Logo image only -->
-            <img
-                src="images/Logo.png"
-                alt="Base Performance"
-                class="logo"
-            >
+          <!-- Logo image only -->
+          <img src="images/Logo.png" alt="Base Performance" class="logo" />
 
-            <div class="nav-links">
-                <a href="index.html">FITNESS</a>
-                <a href="../Home/index.html">SPORTS</a>
-                <!-- <a href="#store">STORE</a> -->
-            </div>
+          <div class="nav-links">
+            <a href="index.html">FITNESS</a>
+            <a href="../Home/index.html">SPORTS</a>
+            <!-- <a href="#store">STORE</a> -->
+          </div>
         </div>
-
         <!-- Right -->
         <div class="nav-right">
+          <!-- Location (text-based) -->
+          <div class="location">
+            <span class="location-dot"></span>
+            <span>TVM</span>
+          </div>
 
-            <!-- Location (text-based) -->
-            <div class="location">
-                <span class="location-dot"></span>
-                <span>TVM</span>
-            </div>
+          <button
+            class="nav-btn"
+            onclick="
+              document
+                .getElementById('qr-section')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            BOOK NOW
+          </button>
 
-            <button class="nav-btn" onclick="document.getElementById('qr-section').scrollIntoView({ behavior: 'smooth' })">
-  BOOK NOW
-</button>
-
-
-         
-            <span class="hamburger">☰</span>
-
-
+          <span class="hamburger">☰</span>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
+    <!-- Video Background in Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>BASE<br>PERFORMANCE</h1>
-            <p>Transform your body with minimalist design and maximum results</p>
-            <div class="cta-buttons">
-                <button class="btn-large btn-gradient">START FREE TRIAL</button>
-                <button class="btn-large btn-outline">VIEW CLASSES</button>
-            </div>
+      <!-- Video Background -->
+      <video autoplay muted loop playsinline class="hero-video">
+        <source
+          src="./images/4367640-hd_1920_1080_30fps.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Video Fallback Image (will show if video doesn't load) -->
+      <div class="video-fallback"></div>
+
+      <!-- Video Overlay for better text visibility -->
+      <div class="video-overlay"></div>
+
+      <div class="hero-content">
+        <h1>BASE<br />PERFORMANCE</h1>
+        <p>Transform your body with minimalist design and maximum results</p>
+        <div class="cta-buttons">
+          <button class="btn-large btn-gradient">START FREE TRIAL</button>
+          <button class="btn-large btn-outline">VIEW CLASSES</button>
         </div>
+      </div>
     </section>
 
     <!-- Republic Day Banner -->
     <div class="container">
-        <div class="republic-day-banner">
-            <h2>MINIMALIST FITNESS</h2>
-            <p>Focus on what matters - your health</p>
-        </div>
+      <div class="republic-day-banner">
+        <h2>MINIMALIST FITNESS</h2>
+        <p>Focus on what matters - your health</p>
+      </div>
     </div>
 
     <section class="at-center">
-        <div class="container">
-            <h2 class="section-title">AT-CENTER CLASSES</h2>
-            <p class="section-subtitle">Trainer-led group sessions in minimalist spaces</p>
+      <div class="container">
+        <h2 class="section-title">AT-CENTER CLASSES</h2>
+        <p class="section-subtitle">
+          Trainer-led group sessions in minimalist spaces
+        </p>
 
-            <div class="center-classes-grid">
-                <div class="center-class-card">
-                    <div class="class-image-placeholder">
-                        <img src="./images/base perfromance.png" alt="Yoga Class">
-                    </div>
-                    <div class="class-category">YOGA</div>
-                    <h3 class="class-name">Pure Yoga</h3>
-                    <p class="class-description">FLEXIBILITY • MINDFULNESS</p>
-                </div>
-
-                <div class="center-class-card">
-                    <div class="class-image-placeholder">
-                        <img src="./images/base perfromance.png" alt="Strength Training">
-                    </div>
-                    <div class="class-category">STRENGTH</div>
-                    <h3 class="class-name">Strength+</h3>
-                    <p class="class-description">POWER • ENDURANCE</p>
-                </div>
-
-                <div class="center-class-card">
-                    <div class="class-image-placeholder">
-                        <img src="./images/base perfromance.png" alt="HRX Workout">
-                    </div>
-                    <div class="class-category">INTENSITY</div>
-                    <h3 class="class-name">HIIT Training</h3>
-                    <p class="class-description">BURN • BUILD • REPEAT</p>
-                </div>
-
-                <div class="center-class-card">
-                    <div class="class-image-placeholder">
-                        <img src="./images/base perfromance.png" alt="Dance Fitness">
-                    </div>
-                    <div class="class-category">CARDIO</div>
-                    <h3 class="class-name">Cardio Flow</h3>
-                    <p class="class-description">ENERGY • MOVEMENT</p>
-                </div>
+        <div class="center-classes-grid">
+          <div class="center-class-card">
+            <div class="class-image-placeholder">
+              <img src="./images/base perfromance.png" alt="Yoga Class" />
             </div>
+            <div class="class-category">YOGA</div>
+            <h3 class="class-name">Pure Yoga</h3>
+            <p class="class-description">FLEXIBILITY • MINDFULNESS</p>
+          </div>
+
+          <div class="center-class-card">
+            <div class="class-image-placeholder">
+              <img
+                src="./images/base perfromance.png"
+                alt="Strength Training"
+              />
+            </div>
+            <div class="class-category">STRENGTH</div>
+            <h3 class="class-name">Strength+</h3>
+            <p class="class-description">POWER • ENDURANCE</p>
+          </div>
+
+          <div class="center-class-card">
+            <div class="class-image-placeholder">
+              <img src="./images/base perfromance.png" alt="HRX Workout" />
+            </div>
+            <div class="class-category">INTENSITY</div>
+            <h3 class="class-name">HIIT Training</h3>
+            <p class="class-description">BURN • BUILD • REPEAT</p>
+          </div>
+
+          <div class="center-class-card">
+            <div class="class-image-placeholder">
+              <img src="./images/base perfromance.png" alt="Dance Fitness" />
+            </div>
+            <div class="class-category">CARDIO</div>
+            <h3 class="class-name">Cardio Flow</h3>
+            <p class="class-description">ENERGY • MOVEMENT</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="workouts">
-        <div class="container">
-            <h2 class="section-title">WORKOUT FORMATS</h2>
-            <div class="workouts-carousel">
-                <div class="workout-card">
-                    <img src="./images/HRX workout.png" alt="HRX Workout">
-                    <div class="workout-info">
-                        <h3 class="workout-name">High Intensity</h3>
-                        <p class="workout-meta">HIIT • 45 MIN</p>
-                    </div>
-                </div>
-                <div class="workout-card">
-                    <img src="./images/cardio heat.png" alt="Cardio HEAT">
-                    <div class="workout-info">
-                        <h3 class="workout-name">Cardio Core</h3>
-                        <p class="workout-meta">CARDIO • 30 MIN</p>
-                    </div>
-                </div>
-                <div class="workout-card">
-                    <img src="./images/dance express.png" alt="Dance Express">
-                    <div class="workout-info">
-                        <h3 class="workout-name">Movement</h3>
-                        <p class="workout-meta">FLOW • 45 MIN</p>
-                    </div>
-                </div>
-                <div class="workout-card">
-                    <img src="./images/boxing bag workout.png" alt="Boxing Bag Workout">
-                    <div class="workout-info">
-                        <h3 class="workout-name">Boxing</h3>
-                        <p class="workout-meta">STRENGTH • 40 MIN</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">WORKOUT FORMATS</h2>
+        <div class="workouts-carousel">
+          <div class="workout-card">
+            <img src="./images/HRX workout.png" alt="HRX Workout" />
+            <div class="workout-info">
+              <h3 class="workout-name">High Intensity</h3>
+              <p class="workout-meta">HIIT • 45 MIN</p>
             </div>
+          </div>
+          <div class="workout-card">
+            <img src="./images/cardio heat.png" alt="Cardio HEAT" />
+            <div class="workout-info">
+              <h3 class="workout-name">Cardio Core</h3>
+              <p class="workout-meta">CARDIO • 30 MIN</p>
+            </div>
+          </div>
+          <div class="workout-card">
+            <img src="./images/dance express.png" alt="Dance Express" />
+            <div class="workout-info">
+              <h3 class="workout-name">Movement</h3>
+              <p class="workout-meta">FLOW • 45 MIN</p>
+            </div>
+          </div>
+          <div class="workout-card">
+            <img
+              src="./images/boxing bag workout.png"
+              alt="Boxing Bag Workout"
+            />
+            <div class="workout-info">
+              <h3 class="workout-name">Boxing</h3>
+              <p class="workout-meta">STRENGTH • 40 MIN</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Plans Section -->
     <section class="plans">
-        <div class="container">
-            <h2 class="section-title">SIMPLE PLANS</h2>
-            <p style="text-align: center; margin-bottom: 3rem; color: var(--text-muted); font-size: 1.1rem;">Choose your path to fitness</p>
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <h3 class="plan-name">ESSENTIAL</h3>
-                    <div class="plan-price">₹999<span style="font-size: 1rem; color: var(--text-muted);">/month</span></div>
-                    <ul class="plan-features">
-                        <li>✓ Group Classes</li>
-                        <li>✓ Basic Gym Access</li>
-                        <li>✓ Home Workouts</li>
-                        <li>✓ Progress Tracking</li>
-                    </ul>
-                    <button class="btn-primary">SELECT</button>
-                </div>
-                <div class="plan-card">
-                    <h3 class="plan-name">PRO</h3>
-                    <div class="plan-price">₹1,499<span style="font-size: 1rem; color: var(--text-muted);">/month</span></div>
-                    <ul class="plan-features">
-                        <li>✓ All Classes</li>
-                        <li>✓ Premium Gyms</li>
-                        <li>✓ Personal Coach</li>
-                        <li>✓ Nutrition Plan</li>
-                    </ul>
-                    <button class="btn-primary">SELECT</button>
-                </div>
-                <div class="plan-card">
-                    <h3 class="plan-name">HOME</h3>
-                    <div class="plan-price">₹699<span style="font-size: 1rem; color: var(--text-muted);">/month</span></div>
-                    <ul class="plan-features">
-                        <li>✓ Live Streams</li>
-                        <li>✓ On-demand Library</li>
-                        <li>✓ Mobile App</li>
-                        <li>✓ Community Access</li>
-                    </ul>
-                    <button class="btn-primary">SELECT</button>
-                </div>
+      <div class="container">
+        <h2 class="section-title">SIMPLE PLANS</h2>
+        <p
+          style="
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+          "
+        >
+          Choose your path to fitness
+        </p>
+        <div class="plans-grid">
+          <div class="plan-card">
+            <h3 class="plan-name">ESSENTIAL</h3>
+            <div class="plan-price">
+              ₹999<span style="font-size: 1rem; color: var(--text-muted)"
+                >/month</span
+              >
             </div>
+            <ul class="plan-features">
+              <li>✓ Group Classes</li>
+              <li>✓ Basic Gym Access</li>
+              <li>✓ Home Workouts</li>
+              <li>✓ Progress Tracking</li>
+            </ul>
+            <button class="btn-primary">SELECT</button>
+          </div>
+          <div class="plan-card">
+            <h3 class="plan-name">PRO</h3>
+            <div class="plan-price">
+              ₹1,499<span style="font-size: 1rem; color: var(--text-muted)"
+                >/month</span
+              >
+            </div>
+            <ul class="plan-features">
+              <li>✓ All Classes</li>
+              <li>✓ Premium Gyms</li>
+              <li>✓ Personal Coach</li>
+              <li>✓ Nutrition Plan</li>
+            </ul>
+            <button class="btn-primary">SELECT</button>
+          </div>
+          <div class="plan-card">
+            <h3 class="plan-name">HOME</h3>
+            <div class="plan-price">
+              ₹699<span style="font-size: 1rem; color: var(--text-muted)"
+                >/month</span
+              >
+            </div>
+            <ul class="plan-features">
+              <li>✓ Live Streams</li>
+              <li>✓ On-demand Library</li>
+              <li>✓ Mobile App</li>
+              <li>✓ Community Access</li>
+            </ul>
+            <button class="btn-primary">SELECT</button>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="trials">
-        <div class="container">
-            <h2 class="section-title">TRY FIRST</h2>
-            <div class="trials-grid">
-                <div class="trial-card">
-                    <div class="trial-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M6.5 6.5h11v11h-11z"></path>
-                            <path d="M3.5 3.5h17v17h-17z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="trial-title">GROUP CLASS</h3>
-                    <p>Experience our signature sessions</p>
-                    <button class="btn-primary">FREE TRIAL</button>
-                </div>
-                <div class="trial-card">
-                    <div class="trial-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="trial-title">GYM ACCESS</h3>
-                    <p>Premium equipment & space</p>
-                    <button class="btn-primary">FREE TRIAL</button>
-                </div>
-                <div class="trial-card">
-                    <div class="trial-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"></circle>
-                        </svg>
-                    </div>
-                    <h3 class="trial-title">AT HOME</h3>
-                    <p>Stream anytime, anywhere</p>
-                    <button class="btn-primary">FREE TRIAL</button>
-                </div>
+      <div class="container">
+        <h2 class="section-title">TRY FIRST</h2>
+        <div class="trials-grid">
+          <div class="trial-card">
+            <div class="trial-icon">
+              <svg
+                width="60"
+                height="60"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M6.5 6.5h11v11h-11z"></path>
+                <path d="M3.5 3.5h17v17h-17z"></path>
+              </svg>
             </div>
+            <h3 class="trial-title">GROUP CLASS</h3>
+            <p>Experience our signature sessions</p>
+            <button class="btn-primary">FREE TRIAL</button>
+          </div>
+          <div class="trial-card">
+            <div class="trial-icon">
+              <svg
+                width="60"
+                height="60"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="trial-title">GYM ACCESS</h3>
+            <p>Premium equipment & space</p>
+            <button class="btn-primary">FREE TRIAL</button>
+          </div>
+          <div class="trial-card">
+            <div class="trial-icon">
+              <svg
+                width="60"
+                height="60"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+            </div>
+            <h3 class="trial-title">AT HOME</h3>
+            <p>Stream anytime, anywhere</p>
+            <button class="btn-primary">FREE TRIAL</button>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="rating">
-        <div class="container">
-            <div class="rating-badge">4.8</div>
-            <h2 class="rating-text">MINIMAL DESIGN, MAXIMUM RESULTS</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Join thousands who've transformed with our focused approach</p>
-        </div>
+      <div class="container">
+        <div class="rating-badge">4.8</div>
+        <h2 class="rating-text">MINIMAL DESIGN, MAXIMUM RESULTS</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem">
+          Join thousands who've transformed with our focused approach
+        </p>
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq">
-        <div class="container">
-            <h2 class="section-title">QUESTIONS</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What makes your approach different?
-                        <span>+</span>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Are beginners welcome?
-                        <span>+</span>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Can I switch between plans?
-                        <span>+</span>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Do you offer nutrition guidance?
-                        <span>+</span>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">QUESTIONS</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              What makes your approach different?
+              <span>+</span>
             </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Are beginners welcome?
+              <span>+</span>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Can I switch between plans?
+              <span>+</span>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Do you offer nutrition guidance?
+              <span>+</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="main-footer">
+      <div class="footer-grid">
+        <!-- COL 1 -->
+        <div class="footer-col">
+          <div class="footer-logo">Base Performance<span>.fit</span></div>
 
-  <div class="footer-grid">
+          <p class="footer-desc">
+            At Base Performance.fit, we make group workouts fun, daily food
+            healthy & tasty, mental fitness easy with yoga & meditation, and
+            medical & lifestyle care hassle-free. #BeBetterEveryDay
+          </p>
+        </div>
 
-    <!-- COL 1 -->
-    <div class="footer-col">
-      <div class="footer-logo">
-        Base Performance<span>.fit</span>
+        <!-- COL 2 -->
+        <div class="footer-col">
+          <h4>Base Performance.fit for business</h4>
+          <ul>
+            <li><a href="#">Base Performance.fit franchise</a></li>
+            <li><a href="#">Corporate partnerships</a></li>
+            <li><a href="#">Base Performance.pass network</a></li>
+            <li><a href="#">t50 for business</a></li>
+          </ul>
+        </div>
+
+        <!-- COL 3 -->
+        <div class="footer-col">
+          <h4>partner.fit</h4>
+          <ul>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- COL 4 -->
+        <div class="footer-col">
+          <h4>contact us</h4>
+          <ul>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">BMI calculator</a></li>
+            <li><a href="#">Terms & conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- QR Code and Social Icons -->
+        <div class="footer-col">
+          <img
+            src="images/qr.png"
+            alt="Scan to open Base Performance Web App"
+            class="promo-qr"
+          />
+
+          <div class="social-icons">
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
       </div>
 
-      <p class="footer-desc">
-        At Base Performance.fit, we make group workouts fun, daily food healthy & tasty,
-        mental fitness easy with yoga & meditation, and medical & lifestyle care hassle-free.
-        #BeBetterEveryDay
-      </p>
-    </div>
-
-    <!-- COL 2 -->
-    <div class="footer-col">
-      <h4>Base Performance.fit for business</h4>
-      <ul>
-        <li><a href="#">Base Performance.fit franchise</a></li>
-        <li><a href="#">Corporate partnerships</a></li>
-        <li><a href="#">Base Performance.pass network</a></li>
-        <li><a href="#">t50 for business</a></li>
-      </ul>
-    </div>
-
-    <!-- COL 3 -->
-    <div class="footer-col">
-      <h4>partner.fit</h4>
-      <ul>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">Careers</a></li>
-      </ul>
-    </div>
-
-    <!-- COL 4 -->
-    <div class="footer-col">
-      <h4>contact us</h4>
-      <ul>
-        <li><a href="#">Privacy policy</a></li>
-        <li><a href="#">BMI calculator</a></li>
-        <li><a href="#">Terms & conditions</a></li>
-      </ul>
-    </div>
-
-    <img
-        src="images/qr.png"
-        alt="Scan to open Base Performance Web App"
-        class="promo-qr"
-      >
-
-
-      <div class="social-icons">
-        <i class="fab fa-youtube"></i>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-linkedin-in"></i>
+      <!-- BOTTOM TEXT -->
+      <div class="footer-bottom">
+        Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad |
+        Gyms in Chennai | Gyms in Delhi
       </div>
-    </div>
-
-  </div>
-
-  <!-- BOTTOM TEXT -->
-  <div class="footer-bottom">
-    Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad | Gyms in Chennai | Gyms in Delhi
-  </div>
-
-</footer>
+    </footer>
 
     <!-- JS FILE -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
