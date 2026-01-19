@@ -731,6 +731,13 @@
   margin-top: 20px;
 }
 
+.promo-qr {
+  margin-top: 26px;
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
 
         /* Responsive Design */
         @media (max-width: 768px) {
