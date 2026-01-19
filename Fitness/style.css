@@ -861,3 +861,13 @@
         display: none;
     }
 }
+.workout-card img,
+.class-image-placeholder img {
+    filter: grayscale(100%) brightness(0.95) contrast(1.15);
+    transition: filter 0.35s ease;
+}
+
+.workout-card:hover img,
+.center-class-card:hover img {
+    filter: grayscale(0%);
+}
