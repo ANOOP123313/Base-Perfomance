@@ -3,552 +3,564 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base Performance.fit - A Fitness Movement Worth Breaking a Sweat For</title>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <title>Base Performance - Gym & Court Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="nav-container">
+<body class="bg-black">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-white ">
+                    <img src="images/Logo.png" alt="Logo" class="logo">
+                    <!-- <span class="text-2xl font-bold">Base Performance</span> -->
+                </div>
 
-        <!-- Left -->
-        <div class="nav-left">
-            <!-- Logo image only -->
-            <img
-                src="images/Logo.png"
-                alt="Base Performance"
-                class="logo"
-            >
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#facilities" class="text-white hover:text-orange-500 transition-colors">Facilities</a>
+                    <a href="#courts" class="text-white hover:text-orange-500 transition-colors">Courts</a>
+                    <a href="#membership" class="text-white hover:text-orange-500 transition-colors">Membership</a>
+                    <a href="#book-now" class="text-white hover:text-orange-500 transition-colors">Book Now</a>
+                    <a href="Fitness/index.html" class="text-white hover:text-orange-500 transition-colors">Fitness</a>
+                </div>
 
-            <div class="nav-links">
-                <a href="./Fitness/index.html">FITNESS</a>
-                <a href="index.html">SPORTS</a>
-                <!-- <a href="#store">STORE</a> -->
-            </div>
-        </div>
-
-        <!-- Right -->
-        <div class="nav-right">
-
-            <!-- Location (text-based) -->
-            <div class="location">
-                <span class="location-dot"></span>
-                <span>TVM</span>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
 
-            <button class="nav-btn" onclick="document.getElementById('qr-section').scrollIntoView({ behavior: 'smooth' })">
-  BOOK NOW
-</button>
-
-
-         
-            <span class="hamburger">☰</span>
-
-
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#facilities" class="block text-white hover:text-orange-500 py-2 transition-colors">Facilities</a>
+                <a href="#courts" class="block text-white hover:text-orange-500 py-2 transition-colors">Courts</a>
+                <a href="#membership" class="block text-white hover:text-orange-500 py-2 transition-colors">Membership</a>
+                <a href="#book-now" class="block text-white hover:text-orange-500 py-2 transition-colors">Book Now</a>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
 
     <!-- Hero Section -->
-<header class="hero-section">
+    <section id="hero" class="relative h-screen overflow-hidden">
+        <div class="hero-bg absolute inset-0">
+    <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source src="gym.mp4" type="video/mp4">
+    </video>
 
-  <!-- Video Background -->
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="videos/gym,.mp4" type="video/mp4">
-  </video>
-
-  <!-- Dark Overlay -->
-  <!-- <div class="hero-overlay"></div> -->
-
-  <!-- Content -->
-  <div class="hero-content">
-    <h1 class="hero-title">
-        
-      <span class="title-top">WE ARE</span>
-      <span class="title-main">Base Performance</span>
-    </h1>
-
-    <p class="hero-subtitle">
-      A fitness movement that is worth<br>
-      breaking a sweat for
-    </p>
-
-    <button class="cta-button">
-      EXPLORE BASE PERFORMANCE PASS
-    </button>
-
-    <div class="scroll-indicator">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <path d="M7 10L12 15L17 10"
-              stroke="white" stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </div>
-
-</header>
-
-
-    <!-- Cult Pass Cards -->
-    <section class="cultpass-cards">
-    <!-- ELITE -->
-    <div class="card">
-        <div class="bp-label">Base Performance</div>
-        <div class="pass-name elite">ELITE</div>
-        <p>Unlimited access to group classes, all gyms and at-home workouts</p>
-    </div>
-
-    <!-- PRO -->
-    <div class="card">
-        <div class="bp-label">Base Performance</div>
-        <div class="pass-name pro">PRO</div>
-        <p>Unlimited access to all PRO gyms and at-home workouts</p>
-    </div>
-
-    <!-- SELECT -->
-    <div class="card">
-        <div class="bp-label">Base Performance</div>
-        <div class="pass-name select">SELECT</div>
-        <p>Unlimited access to single center and at-home workouts</p>
-    </div>
-</section>
-
-
-    
-    <!-- Cultpass Section -->
-    <section class="cultpass-section">
-        <p class="subtitle">Base Performance Pass</p>
-        <h2>One membership for all your fitness needs</h2>
-        <!-- Image Gallery -->
-        <section class="image-gallery">
-            <div class="gallery-container" id="galleryContainer">
-                <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_630,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_img_1.png" alt="Cult">
-                <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_630,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_img_2.png" alt="Cult">
-                <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_630,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_img_3.png" alt="Cult">
-                <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_630,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_img_4.png" alt="Cult">
-                <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_630,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_img_5.png" alt="Cult">
-            </div>
-        </section>
-        
-    </section>
-
-    <!-- Trainer Section -->
-       <!-- Group Classes Section -->
-    <section class="group-classes">
-        <h2 class="classes-title">Fun, trainer led group classes</h2>
-        <div class="gradient-bg">
-            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_300,q_auto:good,f_auto,dpr_2,fl_progressive//image/test/gradient-circle/pink-blur-circle.svg" class="gradient-circle pink" alt="">
-            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_300,q_auto:good,f_auto,dpr_2,fl_progressive//image/test/gradient-circle/golden-blur-circle.svg" class="gradient-circle gold" alt="">
-            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_300,q_auto:good,f_auto,dpr_2,fl_progressive//image/test/gradient-circle/green-blur-circle.svg" class="gradient-circle green" alt="">
-            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_300,q_auto:good,f_auto,dpr_2,fl_progressive//image/test/gradient-circle/aqua-blur-circle.svg" class="gradient-circle aqua" alt="">
-        </div>
-        
-        <div class="trainer-grid">
-
-  <div class="trainer-item">
-    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/trainer-parallax/tile-1.png" class="trainer-tile" alt="Trainer 1">
-  </div>
-
-  <div class="trainer-item">
-    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/trainer-parallax/tile-2.png" class="trainer-tile" alt="Trainer 2">
-  </div>
-
-  <div class="trainer-item">
-    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/trainer-parallax/tile-3.png" class="trainer-tile" alt="Trainer 3">
-  </div>
-
-  <div class="trainer-item">
-    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/trainer-parallax/tile-4.png" class="trainer-tile" alt="Trainer 4">
-  </div>
-
-  <div class="trainer-item">
-    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/trainer-parallax/tile-5.png" class="trainer-tile" alt="Trainer 5">
-  </div>
-
-  <div class="trainer-item">
-    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/trainer-parallax/tile-6.png" class="trainer-tile" alt="Trainer 6">
-  </div>
-
-  <div class="trainer-item">
-    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/trainer-parallax/tile-7.png" class="trainer-tile" alt="Trainer 7">
-  </div>
-
-  <div class="trainer-item">
-    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,q_auto:good,f_auto,dpr_2,fl_progressive/image/test/trainer-parallax/tile-8.png" class="trainer-tile" alt="Trainer 8">
-  </div>
-
+    <!-- Dark gradient overlay (unchanged) -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black"></div>
 </div>
 
-    </section>
-
-    <!-- Membership Plans -->
-     
-<section class="membership-plans">
-
-    <!-- ELITE -->
-    <div class="plan-card">
-        <div class="plan-header">
-            <span class="brand">Base Performance</span>
-            <span class="badge elite">ELITE</span>
-        </div>
-
-        <div class="plan-image-wrap elite">
-            <img src="images/Elite.jpg" alt="Elite Workout">
-            <div class="image-overlay"></div>
-        </div>
-
-        <h3>Unlimited access to</h3>
-        <ul>
-            <li>At-center group classes</li>
-            <li>All ELITE & PRO gyms</li>
-            <li>At-home live workouts</li>
-        </ul>
-
-        <button class="plan-btn primary">TRY FOR FREE</button>
-        <button class="plan-btn secondary">LEARN MORE</button>
-    </div>
-
-    <!-- PRO -->
-    <div class="plan-card">
-        <div class="plan-header">
-            <span class="brand">Base Performance</span>
-            <span class="badge pro">PRO</span>
-        </div>
-
-        <div class="plan-image-wrap pro">
-            <img src="images/Pro.jpg" alt="Pro Workout">
-            <div class="image-overlay"></div>
-        </div>
-
-        <h3>Unlimited access to</h3>
-        <ul>
-            <li>All PRO gyms</li>
-            <li>2 sessions/month at ELITE gyms</li>
-            <li>At-home live workouts</li>
-        </ul>
-
-        <button class="plan-btn primary">TRY FOR FREE</button>
-        <button class="plan-btn secondary">LEARN MORE</button>
-    </div>
-
-    <!-- PLAY -->
-    <div class="plan-card">
-        <div class="plan-header">
-            <span class="brand">Base Performance</span>
-            <span class="badge play">PLAY</span>
-        </div>
-
-        <div class="plan-image-wrap play">
-            <img src="images/supreme.jpg" alt="Play Sports">
-            <div class="image-overlay"></div>
-        </div>
-
-        <h3>Unlimited access to</h3>
-        <ul>
-            <li>Badminton, swimming & sports</li>
-            <li>Guaranteed playing partner</li>
-            <li>Guided sessions with experts</li>
-        </ul>
-
-        <button class="plan-btn primary">TRY FOR FREE</button>
-        <button class="plan-btn secondary">LEARN MORE</button>
-    </div>
-
-</section>
-
-    <!-- Background Gradient Elements -->
-    <div class="gradient-bg">
-        <div class="gradient-circle gradient-pink"></div>
-        <div class="gradient-circle gradient-gold"></div>
-        <div class="gradient-circle gradient-green"></div>
-        <div class="gradient-circle gradient-aqua"></div>
-    </div>
-
-    <main class="main-content">
-
-    <!-- CATEGORIES GRID -->
-    <section class="container">
-        <div class="category-grid">
-            <div class="cat-card bg-transform">
-                <div class="cat-arrow"><i class="fas fa-chevron-right"></i></div>
-                <h3>Base Performance transform</h3>
-                <p>Get coached to lose weight for good</p>
-                <img src="images/loseweight.png" class="cat-bg-img" style="filter: grayscale(1); opacity:0.5;" alt="Scale">
-            </div>
-            <div class="cat-card bg-mind">
-                <div class="cat-arrow"><i class="fas fa-chevron-right"></i></div>
-                <h3>The .fit way</h3>
-                <p>Making health easy, one day at a time</p>
-                <img src="images/mentalclutter.png" class="cat-bg-img" style="filter: brightness(0.5); opacity:0.5;" alt="Mind">
-            </div>
-            <div class="cat-card bg-gear">
-                <div class="cat-arrow"><i class="fas fa-chevron-right"></i></div>
-                <h3>Workout Gear</h3>
-                <p>Everything you need for your workout</p>
-                <img src="images/girl fit.png" class="cat-bg-img" style="right: -50px;" alt="Gear">
-            </div>
-            <div class="cat-card bg-sugar">
-                <div class="cat-arrow"><i class="fas fa-chevron-right"></i></div>
-                <h3>Sugar.fit</h3>
-                <p>Reverse Type 2 Diabetes and Prediabetes</p>
-                <img src="images/sugarcheck.jpg" class="cat-bg-img" style="opacity:0.6;" alt="Sugar">
+        
+        <div class="hero-content relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
+            <h1 class="text-7xl md:text-9xl mb-6 text-center font-bold opacity-0">Base Performance</h1>
+            <p class="text-2xl md:text-4xl text-center mb-12 max-w-3xl opacity-0">Transform your body. Elevate your game.</p>
+            <button class="cta-button bg-orange-500 text-white px-10 py-5 rounded-full text-xl hover:bg-orange-600 transition-all opacity-0">
+                Begin Your Journey
+            </button>
+            <div class="chevron mt-16 opacity-0">
+                <svg class="w-12 h-12 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
             </div>
         </div>
     </section>
 
-    <section class="container">
-    <section class="wellness-hub">
-  <div class="wellness-container">
-    
-
-    <!-- LEFT CONTENT -->
-    <div class="wellness-left">
-      <h2>Wellness Hub</h2>
-      <p>One place for all your well-being needs</p>
-
-      <button class="wellness-btn">
-        WORKOUT GEAR
-        <span>›</span>
-      </button>
-    </div>
-
-    <!-- RIGHT GRID -->
-    <div class="wellness-grid">
-
-      <div class="well-card tall">
-        <img src="images/joggers.png" alt="Joggers">
-        <span class="label">Joggers</span>
-      </div>
-
-      <div class="well-card">
-        <img src="images/T-shirt.png" alt="Tshirts">
-        <span class="label">Tshirts</span>
-      </div>
-
-      <div class="well-card">
-        <img src="images/Spbra.png" alt="Sports Bra">
-        <span class="label">Sports Bra</span>
-      </div>
-
-      <div class="well-card">
-        <img src="images/yogapants.png" alt="Yoga Pants">
-        <span class="label">Yoga Pants</span>
-      </div>
-
-      <div class="well-card tall">
-        <img src="images/sweshirt.png" alt="Sweatshirt">
-        <span class="label">Sweatshirt</span>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-</section>
-
-
-
-    <!-- APP DOWNLOAD -->
-<!-- =========================
-     APP PROMO SECTION (QR ONLY)
-========================= -->
-<section class="app-download" id="qr-section">
-  <div class="app-inner">
-
-    <!-- LEFT CONTENT -->
-    <div class="app-text">
-      <h2>
-        Book through<br>
-        the most loved<br>
-        Web app
-      </h2>
-
-      <p>
-        Start your fitness journey with us.
-        Join the Base Performance!
-      </p>
-
-      <!-- QR CODE ONLY -->
-      <img
-        src="images/qr.png"
-        alt="Scan to open Base Performance Web App"
-        class="promo-qr"
-      >
-    </div>
-
-    <!-- RIGHT IMAGE -->
-    <div class="app-images">
-      <img
-        src="images/our app.jpg"
-        alt="Base Performance Web App Preview"
-        class="app-phone"
-      >
-    </div>
-
-  </div>
-</section>
-
-
-
-    <!-- JOIN FAMILY -->
-    <section class="container">
-        <h2 class="section-title">Join the Base Performance family</h2>
-        <div class="family-section">
-            <div class="fam-card" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=60');">
-                <div class="fam-content">
-                    <div class="fam-title">Careers at Base Performance</div>
-                    <a href="#" class="fam-link">LEARN MORE</a>
-                </div>
+    <!-- Reveal Section -->
+    <section id="reveal-section" class="relative h-[200vh]">
+        <div class="sticky top-0 h-screen overflow-hidden">
+            <div class="reveal-bg absolute inset-0">
+                <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1760114852799-159fe9dccfa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdGhsZXRpYyUyMHBlcmZvcm1hbmNlJTIwdHJhaW5pbmd8ZW58MXx8fHwxNzY4NzM4ODczfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')"></div>
+                <div class="absolute inset-0 bg-black/40"></div>
             </div>
-            <div class="fam-card" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=60');">
-                <div class="fam-content">
-                    <div class="fam-title">Base Performance.fit <span style="color:#f54e75;">franchise</span><br><span style="color:#f59853;">opportunities</span></div>
-                    <p style="margin-top:10px; color:#ddd;">Partner with the largest fitness brand in India</p>
-                    <a href="#" class="fam-link">LEARN MORE</a>
+
+            <div class="reveal-content relative z-10 h-full flex items-center justify-center px-6">
+                <div class="max-w-5xl mx-auto text-center text-white">
+                    <h2 class="reveal-title text-5xl md:text-7xl mb-6 font-bold">Your Fitness Revolution Starts Here</h2>
+                    <p class="reveal-subtitle text-xl md:text-2xl mb-12">Experience the ultimate training facility designed for champions</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
+                        <div class="reveal-feature bg-white/10 backdrop-blur-md rounded-2xl p-8">
+                            <h3 class="text-2xl mb-3 font-bold">Elite Training Programs</h3>
+                            <p class="text-gray-300">Custom workout plans designed by professional athletes and certified trainers</p>
+                        </div>
+                        <div class="reveal-feature bg-white/10 backdrop-blur-md rounded-2xl p-8">
+                            <h3 class="text-2xl mb-3 font-bold">Smart Technology</h3>
+                            <p class="text-gray-300">Track every rep, set, and milestone with our advanced fitness tracking system</p>
+                        </div>
+                        <div class="reveal-feature bg-white/10 backdrop-blur-md rounded-2xl p-8">
+                            <h3 class="text-2xl mb-3 font-bold">Community Driven</h3>
+                            <p class="text-gray-300">Join a community of motivated individuals pushing their limits every day</p>
+                        </div>
+                        <div class="reveal-feature bg-white/10 backdrop-blur-md rounded-2xl p-8">
+                            <h3 class="text-2xl mb-3 font-bold">24/7 Access</h3>
+                            <p class="text-gray-300">Train on your schedule with round-the-clock facility access</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER WAVE -->
-    <section class="footer-wave" id="footerWave">
+    <!-- Sticky Sections -->
+    <div class="bg-white">
+        <!-- Sticky Section 1 -->
+        <section class="sticky-section h-screen flex items-center justify-center sticky top-0">
+            <div class="sticky-content max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center gap-12 opacity-0">
+                <div class="flex-1 ">
+                    <h2 class="text-5xl md:text-7xl mb-6 font-bold">World-Class Gym</h2>
+                    <p class="text-xl md:text-2xl text-gray-600">Premium equipment, unlimited potential. Train with the best facilities designed for serious athletes.</p>
+                </div>
+                <div class="flex-1">
+                    <div class="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="images/World-class-gym.jpeg" alt="Gym" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Floating background SVG -->
-    <svg class="footer-bg" viewBox="0 0 1440 400" preserveAspectRatio="none">
-        <defs>
-            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#52e0c4" stop-opacity="0.35"/>
-                <stop offset="50%" stop-color="#ffffff" stop-opacity="0.15"/>
-                <stop offset="100%" stop-color="#52e0c4" stop-opacity="0.35"/>
-            </linearGradient>
+        <!-- Sticky Section 2 -->
+        <section class="sticky-section h-screen flex items-center justify-center sticky top-0 bg-white">
+            <div class="sticky-content max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row-reverse items-center gap-12 opacity-0">
+                <div class="flex-1">
+                    <h2 class="text-5xl md:text-7xl mb-6 font-bold">Personal Training</h2>
+                    <p class="text-xl md:text-2xl text-gray-600">One-on-one coaching that pushes you beyond your limits. Achieve results you never thought possible.</p>
+                </div>
+                <div class="flex-1">
+                    <div class="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="images/trainers.jpg" alt="Training" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <filter id="blurGlow">
-                <feGaussianBlur stdDeviation="20" result="blur"/>
-                <feMerge>
-                    <feMergeNode in="blur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-            </filter>
-        </defs>
-
-        <!-- Animated wave -->
-        <path fill="url(#waveGradient)" filter="url(#blurGlow)">
-            <animate
-                attributeName="d"
-                dur="10s"
-                repeatCount="indefinite"
-                values="
-                M0,240 C240,200 480,300 720,260 960,220 1200,280 1440,250 L1440,400 L0,400 Z;
-                M0,260 C240,300 480,200 720,240 960,280 1200,220 1440,260 L1440,400 L0,400 Z;
-                M0,240 C240,200 480,300 720,260 960,220 1200,280 1440,250 L1440,400 L0,400 Z"
-            />
-        </path>
-    </svg>
-
-    <!-- Text Content -->
-    <div class="hero-title-small footer-layer slow">WE ARE</div>
-
-    <div class="footer-logo-lg hero-title-main footer-layer mid">
-        Base Performance
+        <!-- Sticky Section 3 -->
+        <section class="sticky-section h-screen flex items-center justify-center sticky top-0 bg-white">
+            <div class="sticky-content max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center gap-12 opacity-0">
+                <div class="flex-1">
+                    <h2 class="text-5xl md:text-7xl mb-6 font-bold">Group Classes</h2>
+                    <p class="text-xl md:text-2xl text-gray-600">Energy, motivation, and results. Join high-intensity group sessions that make fitness fun.</p>
+                </div>
+                <div class="flex-1">
+                    <div class="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="images/groupcls.jpg" alt="Classes" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="motto footer-layer fast">
-        At Base Performance.fit, we make group workouts fun, daily food healthy & tasty,
-        mental fitness easy with yoga & meditation, Medical & lifestyle care hassle-free.
-        <br><strong>#BeBetterEveryDay</strong>
-    </div>
+    <!-- Parallax Divider -->
+    <section class="parallax-section relative h-screen overflow-hidden">
+        <div class="parallax-bg absolute inset-0 w-full h-[120%]">
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1662386392891-688364c5a5d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlbmd0aCUyMHRyYWluaW5nJTIwZXF1aXBtZW50fGVufDF8fHx8MTc2ODgxMTU3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div class="parallax-content relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
+            <h2 class="text-5xl md:text-8xl mb-6 text-center max-w-4xl font-bold">Push Your Limits</h2>
+            <p class="text-xl md:text-3xl text-center max-w-2xl">Every rep counts. Every session matters.</p>
+        </div>
+    </section>
 
-    <!-- Floating particles -->
-    <svg class="footer-particles" viewBox="0 0 300 300">
-        <circle cx="50" cy="80" r="3"/>
-        <circle cx="180" cy="120" r="2"/>
-        <circle cx="220" cy="40" r="4"/>
-        <circle cx="120" cy="200" r="3"/>
-        <circle cx="260" cy="180" r="2"/>
-    </svg>
+    <!-- Courts Section -->
+    <section id="courts" class="scale-section bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-6xl md:text-7xl mb-4 font-bold fade-in-element">Book Your Court</h2>
+                <p class="text-2xl text-gray-600 max-w-2xl mx-auto fade-in-element">Premium courts for champions</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Court Card 1 -->
+                <div class="court-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1710378844976-93a6538671ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXNrZXRiYWxsJTIwY291cnQlMjBpbmRvb3J8ZW58MXx8fHwxNzY4ODAxNzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Basketball Court" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full font-bold">₹400/hour</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl mb-4 font-bold">Basketball Court</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                <span>Capacity: 10-12 players</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Open 6 AM - 11 PM</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-bold">Book Now</button>
+                    </div>
+                </div>
 
-</section>
+                <!-- Court Card 2 -->
+                <div class="court-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/court.jpeg" alt="Tennis Court" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full font-bold">₹300/hour</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl mb-4 font-bold">Tennis Court</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                <span>Capacity: 2-4 players</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Open 6 AM - 10 PM</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-bold">Book Now</button>
+                    </div>
+                </div>
 
+                <!-- Court Card 3 -->
+                <div class="court-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/trainingstudio.jpeg" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full font-bold">₹500/hour</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl mb-4 font-bold">Training Studio</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                <span>Capacity: 1-6 people</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-600">
+                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Open 5 AM - 11 PM</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-bold">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section id="facilities" class="bg-black py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl md:text-7xl text-white text-center mb-20 font-bold fade-in-element">Built for Performance</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="feature-item text-center text-white">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 rounded-full mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl mb-3 font-bold">Premium Equipment</h3>
+                    <p class="text-gray-400 text-lg">State-of-the-art facilities and equipment</p>
+                </div>
+
+                <div class="feature-item text-center text-white">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 rounded-full mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl mb-3 font-bold">Expert Trainers</h3>
+                    <p class="text-gray-400 text-lg">Certified professionals to guide you</p>
+                </div>
+
+                <div class="feature-item text-center text-white">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 rounded-full mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl mb-3 font-bold">Flexible Hours</h3>
+                    <p class="text-gray-400 text-lg">Open early morning to late night</p>
+                </div>
+
+                <div class="feature-item text-center text-white">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 rounded-full mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl mb-3 font-bold">Track Progress</h3>
+                    <p class="text-gray-400 text-lg">Monitor your performance and goals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section 2 -->
+    <section class="parallax-section relative h-screen overflow-hidden">
+        <div class="parallax-bg absolute inset-0 w-full h-[120%]">
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/neverbefore.jpeg')"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div class="parallax-content relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
+            <h2 class="text-5xl md:text-8xl mb-6 text-center max-w-4xl font-bold">Train Like Never Before</h2>
+            <p class="text-xl md:text-3xl text-center max-w-2xl">Join 10,000+ athletes who trust Base Performance</p>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership" class="scale-section bg-zinc-900 py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl md:text-7xl text-white text-center mb-16 font-bold fade-in-element">Choose Your Plan</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Starter Plan -->
+                <div class="membership-card bg-white text-black rounded-2xl p-10 transition-all">
+                    <h3 class="text-4xl mb-2 font-bold">Starter</h3>
+                    <div class="text-6xl mb-8 font-bold">
+                        $49<span class="text-2xl">/month</span>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                            Gym Access
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                            2 Court Bookings/month
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                            Basic Classes
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                            Locker Access
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl text-lg bg-orange-500 text-white hover:bg-orange-600 transition-all font-bold">Get Started</button>
+                </div>
+
+                <!-- Pro Plan (Highlighted) -->
+                <div class="membership-card bg-orange-500 text-white rounded-2xl p-10 md:scale-110 transition-all">
+                    <h3 class="text-4xl mb-2 font-bold">Pro</h3>
+                    <div class="text-6xl mb-8 font-bold">
+                        $99<span class="text-2xl">/month</span>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                            Unlimited Gym Access
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                            8 Court Bookings/month
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                            All Classes
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                            Personal Locker
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                            1 PT Session/month
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl text-lg bg-white text-orange-500 hover:bg-gray-100 transition-all font-bold">Get Started</button>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="membership-card bg-white text-black rounded-2xl p-10 transition-all">
+                    <h3 class="text-4xl mb-2 font-bold">Elite</h3>
+                    <div class="text-6xl mb-8 font-bold">
+                        $199<span class="text-2xl">/month</span>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                            Unlimited Everything
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                            Priority Court Booking
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                            Private Training
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                            Nutrition Consultation
+                        </li>
+                        <li class="flex items-center gap-3 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+                            4 PT Sessions/month
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl text-lg bg-orange-500 text-white hover:bg-orange-600 transition-all font-bold">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Parallax -->
+    <section class="parallax-section relative h-screen overflow-hidden">
+        <div class="parallax-bg absolute inset-0 w-full h-[120%]">
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/court.jpeg')"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div class="parallax-content relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
+            <h2 class="text-5xl md:text-8xl mb-6 text-center max-w-4xl font-bold">Your Best Self Awaits</h2>
+            <p class="text-xl md:text-3xl text-center max-w-2xl">Start today. Transform tomorrow.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="book-now" class="bg-black py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-6xl md:text-7xl mb-8 font-bold fade-in-element">Ready to Begin?</h2>
+            <p class="text-2xl text-gray-400 mb-12 fade-in-element">Join the elite. Book your session today.</p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center fade-in-element">
+                <button class="bg-orange-500 text-white px-12 py-5 rounded-full text-xl hover:bg-orange-600 transition-all hover:scale-110 font-bold">Book Now</button>
+                <button class="bg-transparent border-2 border-white text-white px-12 py-5 rounded-full text-xl hover:bg-white hover:text-black transition-all hover:scale-110 font-bold">Schedule Tour</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer
+    <footer class="bg-black text-white py-20 px-6 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                        <span class="text-2xl font-bold">Base Performance</span>
+                    </div>
+                    <p class="text-gray-400 text-lg">Your destination for peak athletic performance and fitness excellence.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl mb-6 font-bold">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#facilities" class="hover:text-orange-500 transition-colors text-lg">Facilities</a></li>
+                        <li><a href="#courts" class="hover:text-orange-500 transition-colors text-lg">Courts</a></li>
+                        <li><a href="#membership" class="hover:text-orange-500 transition-colors text-lg">Membership</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl mb-6 font-bold">Contact</h4>
+                    <ul class="space-y-3 text-gray-400 text-lg">
+                        <li>123 Performance Way</li>
+                        <li>Athletic City, AC 12345</li>
+                        <li>(555) 123-4567</li>
+                        <li>info@baseperformance.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl mb-6 font-bold">Hours</h4>
+                    <ul class="space-y-3 text-gray-400 text-lg">
+                        <li>Monday - Friday: 5 AM - 11 PM</li>
+                        <li>Saturday - Sunday: 6 AM - 10 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p class="text-lg">© 2026 Base Performance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer> -->
     <!-- FOOTER -->
     <footer class="main-footer">
+      <div class="footer-grid">
+        <!-- COL 1 -->
+        <div class="footer-col">
+          <div class="footer-logo">Base Performance<span>.fit</span></div>
 
-  <div class="footer-grid">
+          <p class="footer-desc">
+            At Base Performance.fit, we make group workouts fun, daily food
+            healthy & tasty, mental fitness easy with yoga & meditation, and
+            medical & lifestyle care hassle-free. #BeBetterEveryDay
+          </p>
+        </div>
 
-    <!-- COL 1 -->
-    <div class="footer-col">
-      <div class="footer-logo">
-        Base Performance<span>.fit</span>
+        <!-- COL 2 -->
+        <div class="footer-col">
+          <h4>Base Performance.fit for business</h4>
+          <ul>
+            <li><a href="#">Base Performance.fit franchise</a></li>
+            <li><a href="#">Corporate partnerships</a></li>
+            <li><a href="#">Base Performance.pass network</a></li>
+            <li><a href="#">t50 for business</a></li>
+          </ul>
+        </div>
+
+        <!-- COL 3 -->
+        <div class="footer-col">
+          <h4>partner.fit</h4>
+          <ul>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- COL 4 -->
+        <div class="footer-col">
+          <h4>contact us</h4>
+          <ul>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">BMI calculator</a></li>
+            <li><a href="#">Terms & conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- QR Code and Social Icons -->
+        <div class="footer-col">
+          <img
+            src="images/qr.png"
+            alt="Scan to open Base Performance Web App"
+            class="promo-qr"
+          />
+
+          <div class="social-icons">
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
       </div>
 
-      <p class="footer-desc">
-        At Base Performance.fit, we make group workouts fun, daily food healthy & tasty,
-        mental fitness easy with yoga & meditation, and medical & lifestyle care hassle-free.
-        #BeBetterEveryDay
-      </p>
-    </div>
-
-    <!-- COL 2 -->
-    <div class="footer-col">
-      <h4>Base Performance.fit for business</h4>
-      <ul>
-        <li><a href="#">Base Performance.fit franchise</a></li>
-        <li><a href="#">Corporate partnerships</a></li>
-        <li><a href="#">Base Performance.pass network</a></li>
-        <li><a href="#">t50 for business</a></li>
-      </ul>
-    </div>
-
-    <!-- COL 3 -->
-    <div class="footer-col">
-      <h4>partner.fit</h4>
-      <ul>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">Careers</a></li>
-      </ul>
-    </div>
-
-    <!-- COL 4 -->
-    <div class="footer-col">
-      <h4>contact us</h4>
-      <ul>
-        <li><a href="#">Privacy policy</a></li>
-        <li><a href="#">BMI calculator</a></li>
-        <li><a href="#">Terms & conditions</a></li>
-      </ul>
-    </div>
-
-    <img
-        src="images/qr.png"
-        alt="Scan to open Base Performance Web App"
-        class="promo-qr"
-      >
-
-
-      <div class="social-icons">
-        <i class="fab fa-youtube"></i>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-linkedin-in"></i>
+      <!-- BOTTOM TEXT -->
+      <div class="footer-bottom">
+        Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad |
+        Gyms in Chennai | Gyms in Delhi
       </div>
-    </div>
-
-  </div>
-
-  <!-- BOTTOM TEXT -->
-  <div class="footer-bottom">
-    Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad | Gyms in Chennai | Gyms in Delhi
-  </div>
-
-</footer>
- 
+    </footer>
 
     <script src="script.js"></script>
 </body>
