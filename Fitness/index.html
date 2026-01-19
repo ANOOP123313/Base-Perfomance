@@ -3,56 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cult.fit - Make Fitness Fun & Easy</title>
+    <title>Base Performance.fit - A Fitness Movement Worth Breaking a Sweat For</title>
 
     <!-- CSS FILE -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="nav-container">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
 
-        <!-- Left -->
-        <div class="nav-left">
-            <!-- Logo image only -->
-            <img
-                src="images/Logo.png"
-                alt="Base Performance"
-                class="logo"
-            >
+            <!-- Left -->
+            <div class="nav-left">
+                <!-- Logo image only -->
+                <img src="images/Logo.png" alt="Base Performance" class="logo">
 
-            <div class="nav-links">
-                <a href="#fitness">FITNESS</a>
-                <a href="#sports">SPORTS</a>
-                <a href="#store">STORE</a>
-            </div>
-        </div>
-
-        <!-- Right -->
-        <div class="nav-right">
-
-            <!-- Location (text-based) -->
-            <div class="location">
-                <span class="location-dot"></span>
-                <span>TVM</span>
+                <div class="nav-links">
+                    <a href="#fitness">FITNESS</a>
+                    <a href="#sports">SPORTS</a>
+                    <a href="#store">STORE</a>
+                </div>
             </div>
 
-            <button class="nav-btn" onclick="document.getElementById('qr-section').scrollIntoView({ behavior: 'smooth' })">
-  BOOK NOW
-</button>
+            <!-- Right -->
+            <div class="nav-right">
 
+                <!-- Location (text-based) -->
+                <div class="location">
+                    <span class="location-dot"></span>
+                    <span>TVM</span>
+                </div>
 
-         
-            <span class="hamburger">☰</span>
+                <button class="nav-btn" onclick="document.getElementById('qr-section').scrollIntoView({ behavior: 'smooth' })">
+                    BOOK NOW
+                </button>
 
+                <span class="hamburger">☰</span>
 
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
+    <!-- Video Background in Hero Section -->
     <section class="hero">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="./images/4367640-hd_1920_1080_30fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Video Fallback Image (will show if video doesn't load) -->
+        <div class="video-fallback"></div>
+        
+        <!-- Video Overlay for better text visibility -->
+        <div class="video-overlay"></div>
+        
         <div class="hero-content">
             <h1>BASE<br>PERFORMANCE</h1>
             <p>Transform your body with minimalist design and maximum results</p>
@@ -277,77 +283,72 @@
 
     <!-- FOOTER -->
     <footer class="main-footer">
+        <div class="footer-grid">
 
-  <div class="footer-grid">
+            <!-- COL 1 -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    Base Performance<span>.fit</span>
+                </div>
 
-    <!-- COL 1 -->
-    <div class="footer-col">
-      <div class="footer-logo">
-        Base Performance<span>.fit</span>
-      </div>
+                <p class="footer-desc">
+                    At Base Performance.fit, we make group workouts fun, daily food healthy & tasty,
+                    mental fitness easy with yoga & meditation, and medical & lifestyle care hassle-free.
+                    #BeBetterEveryDay
+                </p>
+            </div>
 
-      <p class="footer-desc">
-        At Base Performance.fit, we make group workouts fun, daily food healthy & tasty,
-        mental fitness easy with yoga & meditation, and medical & lifestyle care hassle-free.
-        #BeBetterEveryDay
-      </p>
-    </div>
+            <!-- COL 2 -->
+            <div class="footer-col">
+                <h4>Base Performance.fit for business</h4>
+                <ul>
+                    <li><a href="#">Base Performance.fit franchise</a></li>
+                    <li><a href="#">Corporate partnerships</a></li>
+                    <li><a href="#">Base Performance.pass network</a></li>
+                    <li><a href="#">t50 for business</a></li>
+                </ul>
+            </div>
 
-    <!-- COL 2 -->
-    <div class="footer-col">
-      <h4>Base Performance.fit for business</h4>
-      <ul>
-        <li><a href="#">Base Performance.fit franchise</a></li>
-        <li><a href="#">Corporate partnerships</a></li>
-        <li><a href="#">Base Performance.pass network</a></li>
-        <li><a href="#">t50 for business</a></li>
-      </ul>
-    </div>
+            <!-- COL 3 -->
+            <div class="footer-col">
+                <h4>partner.fit</h4>
+                <ul>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
 
-    <!-- COL 3 -->
-    <div class="footer-col">
-      <h4>partner.fit</h4>
-      <ul>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">Careers</a></li>
-      </ul>
-    </div>
+            <!-- COL 4 -->
+            <div class="footer-col">
+                <h4>contact us</h4>
+                <ul>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">BMI calculator</a></li>
+                    <li><a href="#">Terms & conditions</a></li>
+                </ul>
+            </div>
 
-    <!-- COL 4 -->
-    <div class="footer-col">
-      <h4>contact us</h4>
-      <ul>
-        <li><a href="#">Privacy policy</a></li>
-        <li><a href="#">BMI calculator</a></li>
-        <li><a href="#">Terms & conditions</a></li>
-      </ul>
-    </div>
+            <!-- QR Code and Social Icons -->
+            <div class="footer-col">
+                <img src="images/qr.png" alt="Scan to open Base Performance Web App" class="promo-qr">
 
-    <img
-        src="images/qr.png"
-        alt="Scan to open Base Performance Web App"
-        class="promo-qr"
-      >
+                <div class="social-icons">
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
 
+        </div>
 
-      <div class="social-icons">
-        <i class="fab fa-youtube"></i>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-linkedin-in"></i>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- BOTTOM TEXT -->
-  <div class="footer-bottom">
-    Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad | Gyms in Chennai | Gyms in Delhi
-  </div>
-
-</footer>
+        <!-- BOTTOM TEXT -->
+        <div class="footer-bottom">
+            Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad | Gyms in Chennai | Gyms in Delhi
+        </div>
+    </footer>
 
     <!-- JS FILE -->
     <script src="script.js"></script>
