@@ -244,3 +244,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 console.log('✅ Base Performance – Cinematic Scroll Loaded');
+
+
+
+
+    const slides = document.querySelectorAll('.carousel-img');
+    let currentSlide = 0;
+
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 3000); // 5 seconds per slide

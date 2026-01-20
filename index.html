@@ -9,21 +9,20 @@
 </head>
 <body class="bg-black">
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="navbar" class="navbar">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2 text-white ">
+                <div class="flex items-center gap-2 text-white">
                     <img src="images/Logo.png" alt="Logo" class="logo">
-                    <!-- <span class="text-2xl font-bold">Base Performance</span> -->
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#facilities" class="text-white hover:text-orange-500 transition-colors">Facilities</a>
-                    <a href="#courts" class="text-white hover:text-orange-500 transition-colors">Courts</a>
-                    <a href="#membership" class="text-white hover:text-orange-500 transition-colors">Membership</a>
-                    <a href="#book-now" class="text-white hover:text-orange-500 transition-colors">Book Now</a>
-                    <a href="Fitness/index.html" class="text-white hover:text-orange-500 transition-colors">Fitness</a>
+                    <a href="index.html#facilities" class="text-white hover:text-orange-500 transition-colors">Facilities</a>
+                    <a href="index.html#courts" class="text-white hover:text-orange-500 transition-colors">Courts</a>
+                    <a href="index.html#membership" class="text-white hover:text-orange-500 transition-colors">Membership</a>
+                    <a href="Aboutus.html" class="text-white hover:text-blue transition-colors">About Us</a>
+                    <a href="contactus.html" class="text-white hover:text-orange-500 transition-colors">Contact Us</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -36,46 +35,52 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="#facilities" class="block text-white hover:text-orange-500 py-2 transition-colors">Facilities</a>
-                <a href="#courts" class="block text-white hover:text-orange-500 py-2 transition-colors">Courts</a>
-                <a href="#membership" class="block text-white hover:text-orange-500 py-2 transition-colors">Membership</a>
-                <a href="#book-now" class="block text-white hover:text-orange-500 py-2 transition-colors">Book Now</a>
+                <a href="index.html#facilities" class="block text-white hover:text-orange-500 py-2 transition-colors">Facilities</a>
+                <a href="index.html#courts" class="block text-white hover:text-orange-500 py-2 transition-colors">Courts</a>
+                <a href="index.html#membership" class="block text-white hover:text-orange-500 py-2 transition-colors">Membership</a>
+                <a href="Aboutus.html" class="text-white hover:text-blue transition-colors">About Us</a>
+                <a href="contactus.html" class="block text-white hover:text-orange-500 py-2 transition-colors">Contact Us</a>
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
-    <section id="hero" class="relative h-screen overflow-hidden">
-        <div class="hero-bg absolute inset-0">
-    <video
-        class="absolute inset-0 w-full h-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
-        <source src="gym.mp4" type="video/mp4">
-    </video>
+<section id="hero" class="relative h-screen overflow-hidden">
 
-    <!-- Dark gradient overlay (unchanged) -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black"></div>
-</div>
-
-        
-        <div class="hero-content relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
-            <h1 class="text-7xl md:text-9xl mb-6 text-center font-bold opacity-0">Base Performance</h1>
-            <p class="text-2xl md:text-4xl text-center mb-12 max-w-3xl opacity-0">Transform your body. Elevate your game.</p>
-            <button class="cta-button bg-orange-500 text-white px-10 py-5 rounded-full text-xl hover:bg-orange-600 transition-all opacity-0">
-                Begin Your Journey
-            </button>
-            <div class="chevron mt-16 opacity-0">
-                <svg class="w-12 h-12 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </div>
+    <!-- Carousel Background -->
+    <div class="hero-bg absolute inset-0">
+        <div class="hero-carousel">
+            <img src="images/corosel1.jpeg" class="carousel-img active" />
+            <img src="images/neverbefore.jpeg" class="carousel-img" />
+            <img src="images/trainingstudio.jpeg" class="carousel-img" />
         </div>
-    </section>
+
+        <!-- Soft gradient overlay (gray + blue, no black) -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-800/40 to-slate-700/60"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="hero-content relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
+        <h1 class="text-7xl md:text-9xl mb-6 text-center font-bold opacity-0">
+            Base Performance
+        </h1>
+
+        <p class="text-2xl md:text-4xl text-center mb-12 max-w-3xl opacity-0">
+            Transform your body. Elevate your game.
+        </p>
+
+        <button class="cta-button opacity-0">
+            Begin Your Journey
+        </button>
+
+        <div class="chevron mt-16 opacity-0">
+            <svg class="w-12 h-12 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+    </div>
+
+</section>
+
 
     <!-- Reveal Section -->
     <section id="reveal-section" class="relative h-[200vh]">
@@ -163,10 +168,22 @@
 
     <!-- Parallax Divider -->
     <section class="parallax-section relative h-screen overflow-hidden">
-        <div class="parallax-bg absolute inset-0 w-full h-[120%]">
+        <!-- <div class="parallax-bg absolute inset-0 w-full h-[120%]">
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1662386392891-688364c5a5d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlbmd0aCUyMHRyYWluaW5nJTIwZXF1aXBtZW50fGVufDF8fHx8MTc2ODgxMTU3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')"></div>
             <div class="absolute inset-0 bg-black/40"></div>
-        </div>
+        </div> -->
+        <div class="hero-bg absolute inset-0">
+    <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source src="gym.mp4" type="video/mp4">
+    </video>
+
         
         <div class="parallax-content relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
             <h2 class="text-5xl md:text-8xl mb-6 text-center max-w-4xl font-bold">Push Your Limits</h2>
@@ -443,123 +460,67 @@
             <h2 class="text-6xl md:text-7xl mb-8 font-bold fade-in-element">Ready to Begin?</h2>
             <p class="text-2xl text-gray-400 mb-12 fade-in-element">Join the elite. Book your session today.</p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center fade-in-element">
-                <button class="bg-orange-500 text-white px-12 py-5 rounded-full text-xl hover:bg-orange-600 transition-all hover:scale-110 font-bold">Book Now</button>
+                <button class="bg-orange-500 text-white px-12 py-5 rounded-full text-xl hover:bg-orange-600 transition-all hover:scale-110 font-bold" ><a href="contactus.html">Contact Us</a></button>
                 <button class="bg-transparent border-2 border-white text-white px-12 py-5 rounded-full text-xl hover:bg-white hover:text-black transition-all hover:scale-110 font-bold">Schedule Tour</button>
             </div>
         </div>
     </section>
-
-    <!-- Footer
-    <footer class="bg-black text-white py-20 px-6 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="flex items-center gap-2 mb-6">
-                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                        </svg>
-                        <span class="text-2xl font-bold">Base Performance</span>
-                    </div>
-                    <p class="text-gray-400 text-lg">Your destination for peak athletic performance and fitness excellence.</p>
-                </div>
-                <div>
-                    <h4 class="text-xl mb-6 font-bold">Quick Links</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#facilities" class="hover:text-orange-500 transition-colors text-lg">Facilities</a></li>
-                        <li><a href="#courts" class="hover:text-orange-500 transition-colors text-lg">Courts</a></li>
-                        <li><a href="#membership" class="hover:text-orange-500 transition-colors text-lg">Membership</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xl mb-6 font-bold">Contact</h4>
-                    <ul class="space-y-3 text-gray-400 text-lg">
-                        <li>123 Performance Way</li>
-                        <li>Athletic City, AC 12345</li>
-                        <li>(555) 123-4567</li>
-                        <li>info@baseperformance.com</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xl mb-6 font-bold">Hours</h4>
-                    <ul class="space-y-3 text-gray-400 text-lg">
-                        <li>Monday - Friday: 5 AM - 11 PM</li>
-                        <li>Saturday - Sunday: 6 AM - 10 PM</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-gray-800 text-center text-gray-500">
-                <p class="text-lg">© 2026 Base Performance. All rights reserved.</p>
-            </div>
-        </div>
-    </footer> -->
     <!-- FOOTER -->
     <footer class="main-footer">
-      <div class="footer-grid">
-        <!-- COL 1 -->
-        <div class="footer-col">
-          <div class="footer-logo">Base Performance<span>.fit</span></div>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">Base Performance<span>.fit</span></div>
+                <p class="footer-desc">
+                    At Base Performance.fit, we make group workouts fun, daily food
+                    healthy & tasty, mental fitness easy with yoga & meditation, and
+                    medical & lifestyle care hassle-free. #BeBetterEveryDay
+                </p>
+            </div>
 
-          <p class="footer-desc">
-            At Base Performance.fit, we make group workouts fun, daily food
-            healthy & tasty, mental fitness easy with yoga & meditation, and
-            medical & lifestyle care hassle-free. #BeBetterEveryDay
-          </p>
+            <div class="footer-col">
+                <h4>Base Performance.fit for business</h4>
+                <ul>
+                    <li><a href="#">Base Performance.fit franchise</a></li>
+                    <li><a href="#">Corporate partnerships</a></li>
+                    <li><a href="#">Base Performance.pass network</a></li>
+                    <li><a href="#">t50 for business</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>partner.fit</h4>
+                <ul>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>contact us</h4>
+                <ul>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">BMI calculator</a></li>
+                    <li><a href="#">Terms & conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <img src="images/qr.png" alt="Scan to open Base Performance Web App" class="promo-qr" />
+                <div class="social-icons">
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
         </div>
 
-        <!-- COL 2 -->
-        <div class="footer-col">
-          <h4>Base Performance.fit for business</h4>
-          <ul>
-            <li><a href="#">Base Performance.fit franchise</a></li>
-            <li><a href="#">Corporate partnerships</a></li>
-            <li><a href="#">Base Performance.pass network</a></li>
-            <li><a href="#">t50 for business</a></li>
-          </ul>
+        <div class="footer-bottom">
+            Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad |
+            Gyms in Chennai | Gyms in Delhi
         </div>
-
-        <!-- COL 3 -->
-        <div class="footer-col">
-          <h4>partner.fit</h4>
-          <ul>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Security</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 4 -->
-        <div class="footer-col">
-          <h4>contact us</h4>
-          <ul>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">BMI calculator</a></li>
-            <li><a href="#">Terms & conditions</a></li>
-          </ul>
-        </div>
-
-        <!-- QR Code and Social Icons -->
-        <div class="footer-col">
-          <img
-            src="images/qr.png"
-            alt="Scan to open Base Performance Web App"
-            class="promo-qr"
-          />
-
-          <div class="social-icons">
-            <i class="fab fa-youtube"></i>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin-in"></i>
-          </div>
-        </div>
-      </div>
-
-      <!-- BOTTOM TEXT -->
-      <div class="footer-bottom">
-        Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad |
-        Gyms in Chennai | Gyms in Delhi
-      </div>
     </footer>
 
     <script src="script.js"></script>

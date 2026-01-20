@@ -1,3 +1,7 @@
+/* =========================
+   RESET & BASE
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,25 +13,110 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
     overflow-x: hidden;
 }
 
-/* Navbar Scroll Effect */
-#navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+/* =========================
+   NAVBAR
+========================= */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar.scrolled a {
+            color: #2d3748 !important;
+        }
+
+        .navbar.scrolled a:hover {
+            color: #4299e1 !important;
+        }
+        #navbar a:hover {
+    color: #4299e1;
 }
 
-/* Hero Animations */
+        .logo {
+            width: 70px;
+        }
+/* =========================
+   HERO IMAGE CAROUSEL
+========================= */
+
+.hero-carousel {
+    position: absolute;
+    inset: 0;
+}
+
+.carousel-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.4s ease-in-out, transform 6s ease;
+    transform: scale(1.08);
+}
+
+.carousel-img.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* CTA button theme-safe */
+.cta-button {
+    background: #4299e1;
+    color: white;
+    padding: 16px 42px;
+    border-radius: 999px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 16px 40px rgba(66, 153, 225, 0.35);
+}
+
+.cta-button:hover {
+    background: #3182ce;
+}
 .hero-bg {
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.hero-content h1 {
+    color: white;
+}
 
+.hero-content p {
+    color: white;
+}
+
+.hero-content .cta-button {
+    background: #4299e1;
+    color: white;
+    border-radius: 999px;
+    padding: 14px 32px;
+    font-weight: 600;
+    box-shadow: 0 12px 30px rgba(66, 153, 225, 0.35);
+}
+
+.hero-content .cta-button:hover {
+    background: #3182ce;
+}
+
+/* Hero Fade */
 .hero-content h1,
 .hero-content p,
 .hero-content .cta-button,
@@ -44,7 +133,7 @@ body {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(80px);
     }
     to {
         opacity: 1;
@@ -52,158 +141,305 @@ body {
     }
 }
 
-/* Parallax Sections */
+/* =========================
+   PARALLAX & SECTIONS
+========================= */
+
 .parallax-section {
     position: relative;
 }
 
-.parallax-bg {
-    will-change: transform;
-}
-
-.parallax-content {
-    will-change: opacity, transform;
-}
-
-/* Sticky Sections */
-.sticky-section {
-    will-change: transform;
-}
-
-.sticky-content {
-    will-change: opacity, transform;
-    transition: all 0.6s ease-out;
-}
-
-/* Reveal Section */
-.reveal-bg {
-    will-change: transform, opacity;
-    transition: all 0.3s ease-out;
-}
-
-.reveal-content {
-    will-change: transform;
-}
-
-.reveal-title,
-.reveal-subtitle,
-.reveal-feature {
-    will-change: opacity, transform;
-    transition: all 0.3s ease-out;
-}
-
-/* Scale Section */
+.parallax-bg,
+.parallax-content,
+.sticky-section,
+.sticky-content,
+.reveal-bg,
 .scale-section {
     will-change: transform, opacity;
 }
 
-/* Court Cards */
-.court-card {
-    will-change: transform;
-    transition: all 0.3s ease-out;
+/* =========================
+   CARDS
+========================= */
+
+.court-card,
+.membership-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: all 0.35s ease;
 }
 
 .court-card:hover {
     transform: translateY(-10px);
-}
-
-/* Membership Cards */
-.membership-card {
-    will-change: transform;
-    transition: all 0.3s ease-out;
+    box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15);
 }
 
 .membership-card:hover {
-    transform: translateY(-15px) scale(1.05);
+    transform: translateY(-14px) scale(1.04);
+    box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15);
 }
 
-/* Feature Items */
-.feature-item {
-    will-change: opacity, transform;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s ease-out;
+/* Court Card Accents */
+.court-card .bg-orange-500 {
+    background: #4299e1 !important;
 }
 
-.feature-item.visible {
-    opacity: 1;
-    transform: translateY(0);
+.court-card .bg-orange-500:hover {
+    background: #3182ce !important;
 }
 
-/* Fade In Elements */
+.court-card .text-orange-500 {
+    color: #4299e1 !important;
+}
+
+.court-card button.bg-orange-500 {
+    background: #4299e1 !important;
+}
+
+.court-card button.bg-orange-500:hover {
+    background: #3182ce !important;
+}
+
+/* =========================
+   FEATURES SECTION
+========================= */
+
+#facilities {
+    background: #1e293b !important;
+}
+
+#facilities .bg-orange-500 {
+    background: #4299e1 !important;
+}
+
+/* =========================
+   MEMBERSHIP SECTION
+========================= */
+
+#membership {
+    background: #f1f5f9 !important;
+}
+
+#membership h2 {
+    color: #0f172a !important;
+}
+
+#membership .membership-card .bg-orange-500,
+#membership .membership-card.bg-orange-500 {
+    background: #4299e1 !important;
+}
+
+#membership .membership-card .text-orange-500 {
+    color: #4299e1 !important;
+}
+
+#membership .membership-card button.bg-orange-500 {
+    background: #4299e1 !important;
+}
+
+#membership .membership-card button.bg-orange-500:hover {
+    background: #3182ce !important;
+}
+
+#membership .membership-card button.text-orange-500 {
+    color: #4299e1 !important;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+#book-now {
+    background: #1e293b !important;
+}
+
+#book-now button.bg-orange-500 {
+    background: #4299e1 !important;
+}
+
+#book-now button.bg-orange-500:hover {
+    background: #3182ce !important;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.feature-item,
 .fade-in-element {
-    will-change: opacity, transform;
     opacity: 0;
     transform: translateY(50px);
-    transition: all 0.8s ease-out;
+    transition: all 0.7s ease;
 }
 
+.feature-item.visible,
 .fade-in-element.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Button Hover Effects */
+/* =========================
+   BUTTONS
+========================= */
+
 button {
-    will-change: transform;
-    transition: all 0.3s ease-out;
     cursor: pointer;
+    transition: transform 0.25s ease;
 }
 
 button:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 button:active {
     transform: scale(0.95);
 }
 
-/* Smooth Scroll Animations */
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
-}
+/* =========================
+   SCROLLBAR
+========================= */
 
-/* Loading State */
-img {
-    transition: opacity 0.3s ease-out;
-}
-
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #000;
+    background: #e2e8f0;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #f97316;
-    border-radius: 5px;
+    background: #4299e1;
+    border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #ea580c;
+    background: #3182ce;
 }
 
-/* Mobile Optimizations */
+/* =========================
+   FOOTER
+========================= */
+
+/* Footer Styles */
+        .main-footer {
+            background: #2d3748;
+            padding: 70px 1rem 30px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #4a5568;
+        }
+
+        .footer-col {
+            min-width: 200px;
+        }
+
+        .footer-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: #cbd5e0;
+        }
+
+        .footer-desc {
+            color: #a0aec0;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #4299e1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons i {
+            color: #a0aec0;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .social-icons i:hover {
+            color: #4299e1;
+            transform: translateY(-2px);
+        }
+
+        .promo-qr {
+            margin-top: 1.5rem;
+            width: 92px;
+            height: 92px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #718096;
+            font-size: 0.75rem;
+            margin-top: 2rem;
+            padding: 0 1rem;
+            line-height: 1.6;
+        }
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
-    
-    .sticky-content {
-        flex-direction: column;
-    }
-    
+
     .membership-card {
         margin-bottom: 2rem;
     }
 }
 
-/* Performance Optimizations */
+/* =========================
+   PERFORMANCE
+========================= */
+
 .parallax-bg,
 .sticky-content,
 .reveal-bg,
@@ -214,110 +450,40 @@ img {
     perspective: 1000px;
 }
 
-
-.logo{
-    width: 150px;
+.logo {
+    width: 70px;
 }
 
 /* =========================
-        FOOTER
+   TAILWIND OVERRIDES - Orange to Blue Theme
 ========================= */
-.main-footer {
-    background: #000;
-    padding: 70px 1rem 30px;
-    font-size: 0.9rem;
+
+/* Override Tailwind orange-500 to blue */
+.bg-orange-500 {
+    background-color: #4299e1 !important;
 }
 
-.footer-grid {
-    max-width: 1300px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2.5rem;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #333;
+.hover\:bg-orange-500:hover {
+    background-color: #4299e1 !important;
 }
 
-.footer-col {
-    min-width: 200px;
+.text-orange-500 {
+    color: #4299e1 !important;
 }
 
-.footer-logo {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 1rem;
+.hover\:text-orange-500:hover {
+    color: #4299e1 !important;
 }
 
-.footer-logo span {
-    color: #aaa;
+/* Override Tailwind orange-600 to darker blue */
+.bg-orange-600 {
+    background-color: #3182ce !important;
 }
 
-.footer-desc {
-    color: #888;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+.hover\:bg-orange-600:hover {
+    background-color: #3182ce !important;
 }
 
-.footer-col h4 {
-    color: white;
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
-    font-weight: 600;
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 0.75rem;
-}
-
-.footer-col ul li a {
-    color: #888;
-    text-decoration: none;
-    transition: 0.2s ease;
-    font-size: 0.9rem;
-}
-
-.footer-col ul li a:hover {
-    color: white;
-}
-
-.social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.social-icons i {
-    color: #888;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.social-icons i:hover {
-    color: white;
-    transform: translateY(-2px);
-}
-
-.promo-qr {
-    margin-top: 1.5rem;
-    width: 92px;
-    height: 92px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-.footer-bottom {
-    text-align: center;
-    color: #555;
-    font-size: 0.75rem;
-    margin-top: 2rem;
-    padding: 0 1rem;
-    line-height: 1.6;
+.border-orange-500 {
+    border-color: #4299e1 !important;
 }
