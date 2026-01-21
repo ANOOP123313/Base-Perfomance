@@ -95,7 +95,9 @@ body {
 .hero-bg {
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
+.herocontent {
+    background-color: #3b3c3d99;
+}
 .hero-content h1 {
     color: rgb(202, 202, 205);
     /* -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.4); */
@@ -104,7 +106,8 @@ body {
 }
 
 .hero-content p {
-    color: rgb(185, 185, 201);
+    color: rgb(221, 221, 225);
+    text-align: center;
     /* -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.4); */
 }
 
@@ -312,6 +315,29 @@ body {
     transform: translateY(0);
 }
 
+/* Features Grid Alignment */
+#facilities .grid {
+    display: grid;
+    align-items: center;
+}
+
+#facilities .grid.grid-cols-1 {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    #facilities .grid.md\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #facilities .grid.lg\:grid-cols-4 {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+}
+
 /* =========================
    BUTTONS
 ========================= */
@@ -365,14 +391,26 @@ button:active {
     max-width: 1300px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
     padding-bottom: 40px;
     border-bottom: 1px solid #4a5568;
+    align-items: center;
 }
 
 .footer-col {
     min-width: 200px;
+}
+
+.footer-col:first-child {
+    text-align: center;
+}
+
+.footer-col:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
 .footer-logo {
@@ -422,8 +460,10 @@ button:active {
 
 .social-icons {
     display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    gap: 1.5rem;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-icons i {
@@ -466,6 +506,279 @@ button:active {
 
     .membership-card {
         margin-bottom: 2rem;
+    }
+
+    /* Mobile Footer */
+    .main-footer {
+        padding: 50px 1rem 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-bottom: 30px;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-col:last-child {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .footer-logo {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-desc {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .promo-qr {
+        margin: 0;
+    }
+
+    .footer-bottom {
+        font-size: 0.7rem;
+    }
+}
+
+/* =========================
+   TABLET & MEDIUM SCREENS
+========================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .court-card,
+    .membership-card {
+        padding: 2.5rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr auto;
+        gap: 3rem;
+    }
+
+    .main-footer {
+        padding: 60px 2rem 40px;
+    }
+
+    .footer-logo {
+        font-size: 1.3rem;
+    }
+
+    .footer-desc {
+        font-size: 0.88rem;
+    }
+
+    .footer-col h4 {
+        font-size: 0.95rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 0.88rem;
+    }
+}
+
+/* =========================
+   DESKTOP SCREENS
+========================= */
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .court-card,
+    .membership-card {
+        padding: 3rem;
+    }
+
+    .court-card:hover {
+        transform: translateY(-15px);
+    }
+
+    .membership-card:hover {
+        transform: translateY(-18px) scale(1.05);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr auto;
+        gap: 4rem;
+        max-width: 1400px;
+    }
+
+    .footer-col {
+        min-width: auto;
+    }
+
+    .main-footer {
+        padding: 80px 2rem 40px;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+
+    .footer-desc {
+        font-size: 0.9rem;
+    }
+
+    .footer-col h4 {
+        font-size: 1.05rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 0.92rem;
+    }
+
+    .promo-qr {
+        width: 110px;
+        height: 110px;
+    }
+
+    /* Enhanced spacing for desktop */
+    .cta-button {
+        padding: 18px 48px;
+        font-size: 1.3rem;
+    }
+}
+
+/* =========================
+   EXTRA LARGE SCREENS
+========================= */
+
+@media (min-width: 1441px) {
+    body {
+        font-size: 1.05rem;
+    }
+
+    .hero-content h1 {
+        font-size: 4.5rem;
+        margin-bottom: 2rem;
+        letter-spacing: -0.02em;
+    }
+
+    .hero-content p {
+        font-size: 1.6rem;
+        margin-bottom: 2.5rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .court-card,
+    .membership-card {
+        padding: 3.5rem;
+    }
+
+    .court-card:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 20px 50px rgba(56, 189, 248, 0.2);
+    }
+
+    .membership-card:hover {
+        transform: translateY(-22px) scale(1.06);
+        box-shadow: 0 20px 50px rgba(56, 189, 248, 0.2);
+    }
+
+    /* Footer for Extra Large Screens */
+    .main-footer {
+        padding: 100px 3rem 50px;
+        font-size: 0.95rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr auto;
+        gap: 5rem;
+        max-width: 1800px;
+        padding-bottom: 50px;
+    }
+
+    .footer-logo {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .footer-desc {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-col h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 1rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 0.95rem;
+    }
+
+    .social-icons {
+        gap: 1.5rem;
+        margin-top: 0;
+    }
+
+    .social-icons i {
+        font-size: 1.4rem;
+    }
+
+    .promo-qr {
+        width: 120px;
+        height: 120px;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+        margin-top: 3rem;
+    }
+
+    /* Larger buttons */
+    .cta-button {
+        padding: 20px 56px;
+        font-size: 1.4rem;
+    }
+
+    .cta-button:hover {
+        box-shadow: 0 20px 50px rgba(66, 153, 225, 0.4);
+    }
+
+    /* Feature items with enhanced spacing */
+    .feature-item {
+        padding: 2rem;
+    }
+
+    /* Improved card transitions */
+    button:hover {
+        transform: scale(1.12);
     }
 }
 
