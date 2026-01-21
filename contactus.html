@@ -334,14 +334,26 @@
         max-width: 1300px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2.5rem;
+        grid-template-columns: 1fr auto;
+        gap: 4rem;
         padding-bottom: 40px;
         border-bottom: 1px solid #4a5568;
+        align-items: center;
       }
 
       .footer-col {
         min-width: 200px;
+      }
+
+      .footer-col:first-child {
+        text-align: center;
+      }
+
+      .footer-col:last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
       }
 
       .footer-logo {
@@ -391,8 +403,10 @@
 
       .social-icons {
         display: flex;
-        gap: 1rem;
-        margin-top: 1.5rem;
+        gap: 1.5rem;
+        margin-top: 0;
+        align-items: center;
+        justify-content: center;
       }
 
       .social-icons i {
@@ -456,6 +470,48 @@
 
         .form-section h2 {
           font-size: 2rem;
+        }
+
+        /* Mobile Footer */
+        .main-footer {
+          padding: 50px 1rem 20px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding-bottom: 30px;
+        }
+
+        .footer-col {
+          text-align: center;
+        }
+
+        .footer-col:last-child {
+          flex-direction: row;
+          gap: 2rem;
+        }
+
+        .footer-logo {
+          font-size: 1.2rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .footer-desc {
+          font-size: 0.8rem;
+          margin-bottom: 1rem;
+        }
+
+        .social-icons {
+          justify-content: center;
+        }
+
+        .promo-qr {
+          margin: 0;
+        }
+
+        .footer-bottom {
+          font-size: 0.7rem;
         }
       }
     </style>
@@ -523,7 +579,7 @@
             <i class="fas fa-envelope"></i>
           </div>
           <h3>Email Us</h3>
-          <p>info@baseperformance.fit<br />support@baseperformance.fit</p>
+          <p>baseperformanceofficial@gmail.com</p>
         </div>
       </div>
 
@@ -594,40 +650,14 @@
     <footer class="main-footer">
       <div class="footer-grid">
         <div class="footer-col">
-          <div class="footer-logo">Base Performance<span>.fit</span></div>
+          <div class="footer-logo">Base Performance</div>
           <p class="footer-desc">
-            At Base Performance.fit, we make group workouts fun, daily food
-            healthy & tasty, mental fitness easy with yoga & meditation, and
-            medical & lifestyle care hassle-free. #BeBetterEveryDay
+            At BASE, we help you build discipline, accelerate results, sustain
+          progress, and evolve your potential — for sport, for life, for you.
+          Whether you’re chasing medals or just a better version of yourself,
+          BASE combines elite coaching, cutting-edge facilities, and community
+          support to help you perform, recover, and thrive.
           </p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Base Performance.fit for business</h4>
-          <ul>
-            <li><a href="#">Base Performance.fit franchise</a></li>
-            <li><a href="#">Corporate partnerships</a></li>
-            <li><a href="#">Base Performance.pass network</a></li>
-            <li><a href="#">t50 for business</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>partner.fit</h4>
-          <ul>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Security</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>contact us</h4>
-          <ul>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">BMI calculator</a></li>
-            <li><a href="#">Terms & conditions</a></li>
-          </ul>
         </div>
 
         <div class="footer-col">
@@ -645,12 +675,6 @@
           </div>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad |
-        Gyms in Chennai | Gyms in Delhi
-      </div>
-    </footer>
 
     <script>
       // Mobile Menu

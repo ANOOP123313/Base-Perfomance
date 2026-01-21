@@ -243,6 +243,7 @@
         color: white;
         padding: 80px 20px;
         margin: 80px 0;
+        margin-bottom: 0px;
       }
 
       .stats-container {
@@ -338,14 +339,26 @@
         max-width: 1300px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2.5rem;
+        grid-template-columns: 1fr auto;
+        gap: 4rem;
         padding-bottom: 40px;
         border-bottom: 1px solid #4a5568;
+        align-items: center;
       }
 
       .footer-col {
         min-width: 200px;
+      }
+
+      .footer-col:first-child {
+        text-align: center;
+      }
+
+      .footer-col:last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
       }
 
       .footer-logo {
@@ -395,8 +408,10 @@
 
       .social-icons {
         display: flex;
-        gap: 1rem;
-        margin-top: 1.5rem;
+        gap: 1.5rem;
+        margin-top: 0;
+        align-items: center;
+        justify-content: center;
       }
 
       .social-icons i {
@@ -463,6 +478,48 @@
         .stat-number {
           font-size: 2.5rem;
         }
+
+        /* Mobile Footer */
+        .main-footer {
+          padding: 50px 1rem 20px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding-bottom: 30px;
+        }
+
+        .footer-col {
+          text-align: center;
+        }
+
+        .footer-col:last-child {
+          flex-direction: row;
+          gap: 2rem;
+        }
+
+        .footer-logo {
+          font-size: 1.2rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .footer-desc {
+          font-size: 0.8rem;
+          margin-bottom: 1rem;
+        }
+
+        .social-icons {
+          justify-content: center;
+        }
+
+        .promo-qr {
+          margin: 0;
+        }
+
+        .footer-bottom {
+          font-size: 0.7rem;
+        }
       }
     </style>
   </head>
@@ -501,8 +558,9 @@
     </nav>
 
     <div class="hero">
-      <h1>About Base Performance</h1>
-      <p>Your Premier Destination for Gym and Court Bookings</p>
+      <h1>About Us</h1>
+      <!-- <p>Your Premier Destination for Gym and Court Bookings</p> -->
+       <p>Build. Accelerate. Sustain. Evolve</p>
     </div>
 
     <div class="container">
@@ -514,36 +572,17 @@
           Whether you’re chasing medals or just a better version of yourself,
           BASE combines elite coaching, cutting-edge facilities, and community
           support to help you perform, recover, and thrive.
+          Every session at BASE blends biomechanics, sports science, and intelligent
+          coaching to ensure your training works smarter — not just harder.Our 
+          approach ensures every athlete develops the physical, technical, and
+          mental qualities required to excel in competition. From youth prospects
+          to professional athletes, BASE provides the structure, expertise, and
+          technology to elevate human performance. <br>
+          BASE is where training meets science and commitment becomes confidence. Start your journey at BASE today.
         </p>
       </div>
 
-      <div class="features">
-        <div class="feature-card animate-on-scroll">
-          <div class="feature-icon">🏋️</div>
-          <h3>Wise Selection</h3>
-          <p>
-            BASE is where training meets science and commitment becomes
-            confidence. Start your journey at BASE today..
-          </p>
-        </div>
-        <div class="feature-card animate-on-scroll">
-          <div class="feature-icon">⚡</div>
-          <h3>Instant Booking</h3>
-          <p>
-            Book your preferred time slot in seconds with our streamlined
-            reservation system. No phone calls, no hassle.
-          </p>
-        </div>
-        <div class="feature-card animate-on-scroll">
-          <div class="feature-icon">💰</div>
-          <h3>Best Prices</h3>
-          <p>
-            Enjoy competitive rates and exclusive deals on court rentals and gym
-            memberships through our platform.
-          </p>
-        </div>
       </div>
-    </div>
 
     <div class="stats">
       <div class="stats-container">
@@ -551,14 +590,7 @@
           <span class="stat-number" data-target="100">0</span>
           <span class="stat-label">Partner Facilities</span>
         </div>
-        <div class="stat-item animate-on-scroll">
-          <span class="stat-number" data-target="100">0</span>
-          <span class="stat-label">Active Users</span>
-        </div>
-        <div class="stat-item animate-on-scroll">
-          <span class="stat-number" data-target="1000">0</span>
-          <span class="stat-label">Bookings Made</span>
-        </div>
+    
         <div class="stat-item animate-on-scroll">
           <span class="stat-number" data-target="98">0</span>
           <span class="stat-label">Satisfaction Rate</span>
@@ -566,93 +598,27 @@
       </div>
     </div>
 
-    <div class="values">
-      <h2>Our Core Values</h2>
-      <div class="values-grid">
-        <div class="value-item animate-on-scroll">
-          <h3>Accessibility</h3>
-          <p>
-            Making fitness facilities available to everyone, everywhere, at any
-            time.
-          </p>
-        </div>
-        <div class="value-item animate-on-scroll">
-          <h3>Innovation</h3>
-          <p>
-            Continuously improving our platform with cutting-edge technology for
-            seamless experiences.
-          </p>
-        </div>
-        <div class="value-item animate-on-scroll">
-          <h3>Community</h3>
-          <p>
-            Building a vibrant community of fitness enthusiasts and sports
-            lovers.
-          </p>
-        </div>
-        <div class="value-item animate-on-scroll">
-          <h3>Quality</h3>
-          <p>
-            Partnering only with top-rated facilities that meet our high
-            standards.
-          </p>
-        </div>
-      </div>
-    </div>
 
     <!-- FOOTER -->
     <footer class="main-footer">
       <div class="footer-grid">
-        <!-- COL 1 -->
         <div class="footer-col">
-          <div class="footer-logo">Base Performance<span>.fit</span></div>
-
+          <div class="footer-logo">Base Performance</div>
           <p class="footer-desc">
-            At Base Performance.fit, we make group workouts fun, daily food
-            healthy & tasty, mental fitness easy with yoga & meditation, and
-            medical & lifestyle care hassle-free. #BeBetterEveryDay
+           At BASE, we help you build discipline, accelerate results, sustain
+          progress, and evolve your potential — for sport, for life, for you.
+          Whether you’re chasing medals or just a better version of yourself,
+          BASE combines elite coaching, cutting-edge facilities, and community
+          support to help you perform, recover, and thrive.
           </p>
         </div>
 
-        <!-- COL 2 -->
-        <div class="footer-col">
-          <h4>Base Performance.fit for business</h4>
-          <ul>
-            <li><a href="#">Base Performance.fit franchise</a></li>
-            <li><a href="#">Corporate partnerships</a></li>
-            <li><a href="#">Base Performance.pass network</a></li>
-            <li><a href="#">t50 for business</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 3 -->
-        <div class="footer-col">
-          <h4>partner.fit</h4>
-          <ul>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Security</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-
-        <!-- COL 4 -->
-        <div class="footer-col">
-          <h4>contact us</h4>
-          <ul>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">BMI calculator</a></li>
-            <li><a href="#">Terms & conditions</a></li>
-          </ul>
-        </div>
-
-        <!-- QR Code and Social Icons -->
         <div class="footer-col">
           <img
             src="images/qr.png"
             alt="Scan to open Base Performance Web App"
             class="promo-qr"
           />
-
           <div class="social-icons">
             <i class="fab fa-youtube"></i>
             <i class="fab fa-facebook-f"></i>
@@ -662,13 +628,6 @@
           </div>
         </div>
       </div>
-
-      <!-- BOTTOM TEXT -->
-      <div class="footer-bottom">
-        Related Searches: Gym Near Me | Gyms in Bangalore | Gyms in Hyderabad |
-        Gyms in Chennai | Gyms in Delhi
-      </div>
-    </footer>
 
     <script>
       // Mobile Menu
