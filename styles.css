@@ -487,3 +487,66 @@ button:active {
 .border-orange-500 {
     border-color: #4299e1 !important;
 }
+
+/* ===============================
+   REVEAL SECTION – MOBILE FIX
+================================ */
+
+@media (max-width: 768px) {
+
+  /* Section height fix */
+  #reveal-section {
+    height: auto !important;
+    min-height: 100vh;
+  }
+
+  /* Disable sticky on mobile */
+  #reveal-section .sticky {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+  }
+
+  /* Background fix */
+  .reveal-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Content spacing */
+  .reveal-content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  /* Title scaling */
+  .reveal-title {
+    font-size: 2.2rem !important;
+    line-height: 1.2;
+  }
+
+  .reveal-subtitle {
+    font-size: 1.1rem !important;
+  }
+
+  /* Grid fix */
+  .reveal-content .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  /* Feature cards */
+  .reveal-feature {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .reveal-feature h3 {
+    font-size: 1.3rem;
+  }
+
+  .reveal-feature p {
+    font-size: 0.95rem;
+  }
+}
