@@ -10,10 +10,12 @@
 <body class="bg-black">
     <!-- Navigation -->
     <nav id="navbar" class="navbar">
-        <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="max-w-7xl mx-auto px-6 py-2">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2 text-white">
-                    <img src="images/Logo.png" alt="Logo" class="logo">
+                    <div class="logo">
+                    <img src="images/Logo.png" alt="Logo" >
+                    </div>
                 </div>
 
                 <!-- Desktop Menu -->
@@ -26,7 +28,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white">
+                <button id="mobile-menu-btn" class="md:hidden text-black">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -52,10 +54,13 @@
             <img src="images/corosel1.jpeg" class="carousel-img active" />
             <img src="images/neverbefore.jpeg" class="carousel-img" />
             <img src="images/trainingstudio.jpeg" class="carousel-img" />
+            <img src="images/pdf24_converted-images-6.jpg.jpeg" class="carousel-img" />
+            <img src="images/pdf24_converted-images-2.jpg.jpeg" class="carousel-img" />
+
         </div>
 
         <!-- Soft gradient overlay (gray + blue, no black) -->
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-800/40 to-slate-700/60"></div>
+        <!-- <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-800/40 to-slate-700/60"></div> -->
     </div>
 
     <!-- Content -->
@@ -68,7 +73,7 @@
             Build. Accelerate. Sustain. Evolve.
         </p>
 
-        <button class="cta-button opacity-0">
+        <!-- <button class="cta-button opacity-0">
             Begin Your Journey
         </button>
 
@@ -76,7 +81,7 @@
             <svg class="w-12 h-12 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
-        </div>
+        </div> -->
     </div>
 
 </section>
@@ -108,10 +113,10 @@
                             <h3 class="text-2xl mb-3 font-bold">Community Driven</h3>
                             <p class="text-gray-300">Join a community of motivated individuals pushing their limits every day</p>
                         </div>
-                        <div class="reveal-feature bg-white/10 backdrop-blur-md rounded-2xl p-8">
+                        <!-- <div class="reveal-feature bg-white/10 backdrop-blur-md rounded-2xl p-8">
                             <h3 class="text-2xl mb-3 font-bold">24/7 Access</h3>
                             <p class="text-gray-300">Train on your schedule with round-the-clock facility access</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -168,12 +173,12 @@ Spacious lockers and modern changing rooms designed for a seamless workout exper
     </div>
 
     <!-- Parallax Divider -->
-    <section class="parallax-section relative h-screen overflow-hidden">
+    <!-- <section class="parallax-section relative h-screen overflow-hidden"> -->
         <!-- <div class="parallax-bg absolute inset-0 w-full h-[120%]">
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1662386392891-688364c5a5d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlbmd0aCUyMHRyYWluaW5nJTIwZXF1aXBtZW50fGVufDF8fHx8MTc2ODgxMTU3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')"></div>
             <div class="absolute inset-0 bg-black/40"></div>
         </div> -->
-        <div class="hero-bg absolute inset-0">
+        <!-- <div class="hero-bg absolute inset-0">
     <video
         class="absolute inset-0 w-full h-full object-cover"
         autoplay
@@ -183,105 +188,35 @@ Spacious lockers and modern changing rooms designed for a seamless workout exper
         preload="auto"
     >
         <source src="BASE Gym Reel 02 2.mp4" type="video/mp4">
-    </video>
+    </video> -->
 
         
         <!-- <div class="parallax-content relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
             <h2 class="text-5xl md:text-8xl mb-6 text-center max-w-4xl font-bold">Push Your Limits</h2>
             <p class="text-xl md:text-3xl text-center max-w-2xl">Every rep counts. Every session matters.</p>
         </div> -->
-    </section>
+        
 
-    <!-- Courts Section -->
-    <section id="courts" class="scale-section bg-white py-24 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-6xl md:text-7xl mb-4 font-bold fade-in-element">Book Your Court</h2>
-                <p class="text-2xl text-gray-600 max-w-2xl mx-auto fade-in-element">Premium courts for champions</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Court Card 1 -->
-                <div class="court-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1710378844976-93a6538671ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXNrZXRiYWxsJTIwY291cnQlMjBpbmRvb3J8ZW58MXx8fHwxNzY4ODAxNzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Basketball Court" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full font-bold">₹400/hour</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl mb-4 font-bold">Basketball Court</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3 text-gray-600">
-                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                                <span>Capacity: 10-12 players</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-600">
-                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>Open 6 AM - 11 PM</span>
-                            </div>
-                        </div>
-                        <button class="w-full mt-6 bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-bold">Book Now</button>
-                    </div>
-                </div>
+<!-- Sticky Section 1 -->
+<section class="sticky-section2 sticky top-0 h-screen w-full overflow-hidden">
+  <img
+    src="images/court.jpeg"
+    alt="Gym"
+    class="w-full h-full object-cover"
+  />
+</section>
 
-                <!-- Court Card 2 -->
-                <div class="court-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="images/court.jpeg" alt="Tennis Court" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full font-bold">₹300/hour</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl mb-4 font-bold">Tennis Court</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3 text-gray-600">
-                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                                <span>Capacity: 2-4 players</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-600">
-                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>Open 6 AM - 10 PM</span>
-                            </div>
-                        </div>
-                        <button class="w-full mt-6 bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-bold">Book Now</button>
-                    </div>
-                </div>
+<!-- Sticky Section 2 -->
+<section class="sticky-section2 sticky top-0 h-screen w-full overflow-hidden">
+  <img
+    src="images/court2.jpeg"
+    alt="Classes"
+    class="w-full h-full object-cover"
+  />
+</section>
 
-                <!-- Court Card 3 -->
-                <div class="court-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="images/trainingstudio.jpeg" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full font-bold">₹500/hour</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl mb-4 font-bold">Training Studio</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3 text-gray-600">
-                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                                <span>Capacity: 1-6 people</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-600">
-                                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>Open 5 AM - 11 PM</span>
-                            </div>
-                        </div>
-                        <button class="w-full mt-6 bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-bold">Book Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
+    
     <!-- Features Section -->
     <section id="facilities" class="bg-black py-32 px-6">
         <div class="max-w-7xl mx-auto">
@@ -344,103 +279,7 @@ Spacious lockers and modern changing rooms designed for a seamless workout exper
         </div>
     </section>
 
-    <!-- Membership Section -->
-    <section id="membership" class="scale-section bg-zinc-900 py-24 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-6xl md:text-7xl text-white text-center mb-16 font-bold fade-in-element">Choose Your Plan</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Starter Plan -->
-                <div class="membership-card bg-white text-black rounded-2xl p-10 transition-all">
-                    <h3 class="text-4xl mb-2 font-bold">Starter</h3>
-                    <div class="text-6xl mb-8 font-bold">
-                        $49<span class="text-2xl">/month</span>
-                    </div>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            Gym Access
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            2 Court Bookings/month
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            Basic Classes
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            Locker Access
-                        </li>
-                    </ul>
-                    <button class="w-full py-4 rounded-xl text-lg bg-orange-500 text-white hover:bg-orange-600 transition-all font-bold">Get Started</button>
-                </div>
-
-                <!-- Pro Plan (Highlighted) -->
-                <div class="membership-card bg-orange-500 text-white rounded-2xl p-10 md:scale-110 transition-all">
-                    <h3 class="text-4xl mb-2 font-bold">Pro</h3>
-                    <div class="text-6xl mb-8 font-bold">
-                        $99<span class="text-2xl">/month</span>
-                    </div>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-white"></div>
-                            Unlimited Gym Access
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-white"></div>
-                            8 Court Bookings/month
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-white"></div>
-                            All Classes
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-white"></div>
-                            Personal Locker
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-white"></div>
-                            1 PT Session/month
-                        </li>
-                    </ul>
-                    <button class="w-full py-4 rounded-xl text-lg bg-white text-orange-500 hover:bg-gray-100 transition-all font-bold">Get Started</button>
-                </div>
-
-                <!-- Elite Plan -->
-                <div class="membership-card bg-white text-black rounded-2xl p-10 transition-all">
-                    <h3 class="text-4xl mb-2 font-bold">Elite</h3>
-                    <div class="text-6xl mb-8 font-bold">
-                        $199<span class="text-2xl">/month</span>
-                    </div>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            Unlimited Everything
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            Priority Court Booking
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            Private Training
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            Nutrition Consultation
-                        </li>
-                        <li class="flex items-center gap-3 text-lg">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            4 PT Sessions/month
-                        </li>
-                    </ul>
-                    <button class="w-full py-4 rounded-xl text-lg bg-orange-500 text-white hover:bg-orange-600 transition-all font-bold">Get Started</button>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Final CTA Parallax -->
     <section class="parallax-section relative h-screen overflow-hidden">
