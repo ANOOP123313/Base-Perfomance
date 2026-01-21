@@ -1,562 +1,656 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Base Performance</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            line-height: 1.6;
-            color: #2d3748;
-            overflow-x: hidden;
-            background-color: #f7fafc;
-        }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+          "Ubuntu", "Cantarell", sans-serif;
+        line-height: 1.6;
+        color: #2d3748;
+        overflow-x: hidden;
+        background-color: #f7fafc;
+      }
 
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            transition: all 0.3s;
-        }
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition: all 0.3s;
+      }
 
-        .navbar.scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
+      .navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
 
-        .navbar.scrolled a {
-            color: #2d3748 !important;
-        }
+      .navbar.scrolled a {
+        color: #2d3748 !important;
+      }
 
-        .navbar.scrolled a:hover {
-            color: #4299e1 !important;
-        }
-        #navbar a:hover {
-    color: #4299e1;
-}
+      .navbar.scrolled a:hover {
+        color: #4299e1 !important;
+      }
+      #navbar a:hover {
+        color: #4299e1;
+      }
 
-        .logo {
-            width: 70px;
-        }
+      .logo {
+        max-width: 300px;
+        width: 150px;
+      }
+      .logo img {
+        width: 200%;
+      }
 
-        .hero {
-            background-color: gray ;
-            color: white;
-            padding: 160px 20px 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+      .hero {
+        background-color: gray;
+        color: white;
+        padding: 160px 20px 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v100H0z" fill="none"/><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
-            animation: float 20s linear infinite;
-        }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v100H0z" fill="none"/><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>')
+          repeat;
+        animation: float 20s linear infinite;
+      }
 
-        @keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100px); }
+      @keyframes float {
+        0% {
+          transform: translateY(0);
         }
+        100% {
+          transform: translateY(-100px);
+        }
+      }
 
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+        animation: fadeInDown 1s ease;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease 0.3s both;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 20px;
+        background-color: #ffffff;
+      }
+
+      .mission {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+
+      .mission h2 {
+        font-size: 2.5rem;
+        color: #4299e1;
+        margin-bottom: 30px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
+
+      .mission h2.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .mission p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #4a5568;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease 0.2s;
+      }
+
+      .mission p.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-bottom: 80px;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(66, 153, 225, 0.1);
+        text-align: center;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        opacity: 0;
+        transform: translateY(30px);
+        border: 1px solid #e2e8f0;
+      }
+
+      .feature-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(66, 153, 225, 0.2);
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        display: inline-block;
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .feature-card:hover .feature-icon {
+        animation: none;
+      }
+
+      .feature-card h3 {
+        font-size: 1.5rem;
+        color: #2d3748;
+        margin-bottom: 15px;
+      }
+
+      .feature-card p {
+        color: #4a5568;
+        line-height: 1.8;
+      }
+
+      .stats {
+        background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+        color: white;
+        padding: 80px 20px;
+        margin: 80px 0;
+      }
+
+      .stats-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        text-align: center;
+      }
+
+      .stat-item {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.6s ease;
+      }
+
+      .stat-item.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .values {
+        background: #f7fafc;
+        padding: 80px 20px;
+      }
+
+      .values h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #4299e1;
+        margin-bottom: 60px;
+      }
+
+      .values-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .value-item {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        border-left: 4px solid #4299e1;
+        transition: transform 0.3s ease;
+        opacity: 0;
+        transform: translateX(-30px);
+        box-shadow: 0 4px 6px rgba(66, 153, 225, 0.1);
+      }
+
+      .value-item.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .value-item:hover {
+        transform: translateX(10px);
+      }
+
+      .value-item h3 {
+        color: #4299e1;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+      }
+
+      .value-item p {
+        color: #4a5568;
+      }
+
+      /* Footer Styles */
+      .main-footer {
+        background: #2d3748;
+        padding: 70px 1rem 30px;
+        font-size: 0.9rem;
+      }
+
+      .footer-grid {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2.5rem;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #4a5568;
+      }
+
+      .footer-col {
+        min-width: 200px;
+      }
+
+      .footer-logo {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .footer-logo span {
+        color: #cbd5e0;
+      }
+
+      .footer-desc {
+        color: #a0aec0;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-col h4 {
+        color: white;
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+        font-weight: 600;
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-col ul li a {
+        color: #a0aec0;
+        text-decoration: none;
+        transition: 0.2s ease;
+        font-size: 0.9rem;
+      }
+
+      .footer-col ul li a:hover {
+        color: #4299e1;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-icons i {
+        color: #a0aec0;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .social-icons i:hover {
+        color: #4299e1;
+        transform: translateY(-2px);
+      }
+
+      .promo-qr {
+        margin-top: 1.5rem;
+        width: 92px;
+        height: 92px;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        color: #718096;
+        font-size: 0.75rem;
+        margin-top: 2rem;
+        padding: 0 1rem;
+        line-height: 1.6;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f7fafc;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #4299e1;
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3182ce;
+      }
+
+      @media (max-width: 768px) {
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-            animation: fadeInDown 1s ease;
+          font-size: 2.5rem;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease 0.3s both;
+          font-size: 1.1rem;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            background-color: #ffffff;
-        }
-
-        .mission {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .mission h2 {
-            font-size: 2.5rem;
-            color: #4299e1;
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .mission h2.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .mission p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #4a5568;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease 0.2s;
-        }
-
-        .mission p.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(66, 153, 225, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            border: 1px solid #e2e8f0;
-        }
-
-        .feature-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(66, 153, 225, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .feature-card:hover .feature-icon {
-            animation: none;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            color: #2d3748;
-            margin-bottom: 15px;
-        }
-
-        .feature-card p {
-            color: #4a5568;
-            line-height: 1.8;
-        }
-
-        .stats {
-            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
-            color: white;
-            padding: 80px 20px;
-            margin: 80px 0;
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.6s ease;
-        }
-
-        .stat-item.visible {
-            opacity: 1;
-            transform: scale(1);
+        .mission h2,
+        .values h2 {
+          font-size: 2rem;
         }
 
         .stat-number {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
+          font-size: 2.5rem;
         }
-
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .values {
-            background: #f7fafc;
-            padding: 80px 20px;
-        }
-
-        .values h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #4299e1;
-            margin-bottom: 60px;
-        }
-
-        .values-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .value-item {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 4px solid #4299e1;
-            transition: transform 0.3s ease;
-            opacity: 0;
-            transform: translateX(-30px);
-            box-shadow: 0 4px 6px rgba(66, 153, 225, 0.1);
-        }
-
-        .value-item.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .value-item:hover {
-            transform: translateX(10px);
-        }
-
-        .value-item h3 {
-            color: #4299e1;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .value-item p {
-            color: #4a5568;
-        }
-
-        /* Footer Styles */
-        .main-footer {
-            background: #2d3748;
-            padding: 70px 1rem 30px;
-            font-size: 0.9rem;
-        }
-
-        .footer-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2.5rem;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #4a5568;
-        }
-
-        .footer-col {
-            min-width: 200px;
-        }
-
-        .footer-logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .footer-logo span {
-            color: #cbd5e0;
-        }
-
-        .footer-desc {
-            color: #a0aec0;
-            font-size: 0.85rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-col h4 {
-            color: white;
-            font-size: 1rem;
-            margin-bottom: 1.25rem;
-            font-weight: 600;
-        }
-
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-col ul li a {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: 0.2s ease;
-            font-size: 0.9rem;
-        }
-
-        .footer-col ul li a:hover {
-            color: #4299e1;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-icons i {
-            color: #a0aec0;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.2s ease;
-        }
-
-        .social-icons i:hover {
-            color: #4299e1;
-            transform: translateY(-2px);
-        }
-
-        .promo-qr {
-            margin-top: 1.5rem;
-            width: 92px;
-            height: 92px;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            color: #718096;
-            font-size: 0.75rem;
-            margin-top: 2rem;
-            padding: 0 1rem;
-            line-height: 1.6;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f7fafc;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #4299e1;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3182ce;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .mission h2, .values h2 {
-                font-size: 2rem;
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav id="navbar" class="navbar">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2 text-white">
-                    <img src="images/Logo.png" alt="Logo" class="logo">
-                </div>
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-white">
+            <img src="images/Logo.png" alt="Logo" class="logo" />
+          </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="text-white hover:text-blue transition-colors">Home</a>
-                    <a href="index.html#facilities" class="text-white hover:text-orange-500 transition-colors">Facilities</a>
-                    <a href="index.html#courts" class="text-white hover:text-orange-500 transition-colors">Courts</a>
-                    <a href="index.html#membership" class="text-white hover:text-orange-500 transition-colors">Membership</a>
-                    <a href="contactus.html" class="text-white hover:text-orange-500 transition-colors">Contact Us</a>
-                </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="index.html"
+              class="text-white hover:text-blue transition-colors"
+              >Home</a
+            >
+            <a
+              href="index.html#facilities"
+              class="text-white hover:text-orange-500 transition-colors"
+              >Facilities</a
+            >
+            <a
+              href="index.html#courts"
+              class="text-white hover:text-orange-500 transition-colors"
+              >Courts</a
+            >
+            <a
+              href="index.html#membership"
+              class="text-white hover:text-orange-500 transition-colors"
+              >Membership</a
+            >
+            <a
+              href="contactus.html"
+              class="text-white hover:text-orange-500 transition-colors"
+              >Contact Us</a
+            >
+          </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="index.html" class="block text-white hover:text-orange-500 py-2 transition-colors">Home</a>
-                <a href="index.html#facilities" class="block text-white hover:text-orange-500 py-2 transition-colors">Facilities</a>
-                <a href="index.html#courts" class="block text-white hover:text-orange-500 py-2 transition-colors">Courts</a>
-                <a href="index.html#membership" class="block text-white hover:text-orange-500 py-2 transition-colors">Membership</a>
-                <a href="contactus.html" class="block text-white hover:text-orange-500 py-2 transition-colors">Contact Us</a>
-            </div>
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden text-white">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
         </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+          <a
+            href="index.html"
+            class="block text-white hover:text-orange-500 py-2 transition-colors"
+            >Home</a
+          >
+          <a
+            href="index.html#facilities"
+            class="block text-white hover:text-orange-500 py-2 transition-colors"
+            >Facilities</a
+          >
+          <a
+            href="index.html#courts"
+            class="block text-white hover:text-orange-500 py-2 transition-colors"
+            >Courts</a
+          >
+          <a
+            href="index.html#membership"
+            class="block text-white hover:text-orange-500 py-2 transition-colors"
+            >Membership</a
+          >
+          <a
+            href="contactus.html"
+            class="block text-white hover:text-orange-500 py-2 transition-colors"
+            >Contact Us</a
+          >
+        </div>
+      </div>
     </nav>
 
     <div class="hero">
-        <h1>About Base Performance</h1>
-        <p>Your Premier Destination for Gym and Court Bookings</p>
+      <h1>About Base Performance</h1>
+      <p>Your Premier Destination for Gym and Court Bookings</p>
     </div>
 
     <div class="container">
-        <div class="mission">
-            <h2 class="animate-on-scroll">Our Mission</h2>
-            <p class="animate-on-scroll">At BASE, we help you build discipline, accelerate results, sustain progress,
-            and evolve your potential — for sport, for life, for you.
-            Whether you’re chasing medals or just a better version of yourself,
-            BASE combines elite coaching, cutting-edge facilities, and community support
-            to help you perform, recover, and thrive.
-        </div>
+      <div class="mission">
+        <h2 class="animate-on-scroll">Our Mission</h2>
+        <p class="animate-on-scroll">
+          At BASE, we help you build discipline, accelerate results, sustain
+          progress, and evolve your potential — for sport, for life, for you.
+          Whether you’re chasing medals or just a better version of yourself,
+          BASE combines elite coaching, cutting-edge facilities, and community
+          support to help you perform, recover, and thrive.
+        </p>
+      </div>
 
-        <div class="features">
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">🏋️</div>
-                <h3>Wise Selection</h3>
-                <p>BASE is where training meets science and commitment becomes confidence.
-            Start your journey at BASE today..</p>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">⚡</div>
-                <h3>Instant Booking</h3>
-                <p>Book your preferred time slot in seconds with our streamlined reservation system. No phone calls, no hassle.</p>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">💰</div>
-                <h3>Best Prices</h3>
-                <p>Enjoy competitive rates and exclusive deals on court rentals and gym memberships through our platform.</p>
-            </div>
+      <div class="features">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">🏋️</div>
+          <h3>Wise Selection</h3>
+          <p>
+            BASE is where training meets science and commitment becomes
+            confidence. Start your journey at BASE today..
+          </p>
         </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Booking</h3>
+          <p>
+            Book your preferred time slot in seconds with our streamlined
+            reservation system. No phone calls, no hassle.
+          </p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">💰</div>
+          <h3>Best Prices</h3>
+          <p>
+            Enjoy competitive rates and exclusive deals on court rentals and gym
+            memberships through our platform.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="stats">
-        <div class="stats-container">
-            <div class="stat-item animate-on-scroll">
-                <span class="stat-number" data-target="500">0</span>
-                <span class="stat-label">Partner Facilities</span>
-            </div>
-            <div class="stat-item animate-on-scroll">
-                <span class="stat-number" data-target="50000">0</span>
-                <span class="stat-label">Active Users</span>
-            </div>
-            <div class="stat-item animate-on-scroll">
-                <span class="stat-number" data-target="1000000">0</span>
-                <span class="stat-label">Bookings Made</span>
-            </div>
-            <div class="stat-item animate-on-scroll">
-                <span class="stat-number" data-target="98">0</span>
-                <span class="stat-label">Satisfaction Rate</span>
-            </div>
+      <div class="stats-container">
+        <div class="stat-item animate-on-scroll">
+          <span class="stat-number" data-target="500">0</span>
+          <span class="stat-label">Partner Facilities</span>
         </div>
+        <div class="stat-item animate-on-scroll">
+          <span class="stat-number" data-target="50000">0</span>
+          <span class="stat-label">Active Users</span>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <span class="stat-number" data-target="1000000">0</span>
+          <span class="stat-label">Bookings Made</span>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <span class="stat-number" data-target="98">0</span>
+          <span class="stat-label">Satisfaction Rate</span>
+        </div>
+      </div>
     </div>
 
     <div class="values">
-        <h2>Our Core Values</h2>
-        <div class="values-grid">
-            <div class="value-item animate-on-scroll">
-                <h3>Accessibility</h3>
-                <p>Making fitness facilities available to everyone, everywhere, at any time.</p>
-            </div>
-            <div class="value-item animate-on-scroll">
-                <h3>Innovation</h3>
-                <p>Continuously improving our platform with cutting-edge technology for seamless experiences.</p>
-            </div>
-            <div class="value-item animate-on-scroll">
-                <h3>Community</h3>
-                <p>Building a vibrant community of fitness enthusiasts and sports lovers.</p>
-            </div>
-            <div class="value-item animate-on-scroll">
-                <h3>Quality</h3>
-                <p>Partnering only with top-rated facilities that meet our high standards.</p>
-            </div>
+      <h2>Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-item animate-on-scroll">
+          <h3>Accessibility</h3>
+          <p>
+            Making fitness facilities available to everyone, everywhere, at any
+            time.
+          </p>
         </div>
+        <div class="value-item animate-on-scroll">
+          <h3>Innovation</h3>
+          <p>
+            Continuously improving our platform with cutting-edge technology for
+            seamless experiences.
+          </p>
+        </div>
+        <div class="value-item animate-on-scroll">
+          <h3>Community</h3>
+          <p>
+            Building a vibrant community of fitness enthusiasts and sports
+            lovers.
+          </p>
+        </div>
+        <div class="value-item animate-on-scroll">
+          <h3>Quality</h3>
+          <p>
+            Partnering only with top-rated facilities that meet our high
+            standards.
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- FOOTER -->
@@ -630,85 +724,94 @@
     </footer>
 
     <script>
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+      // Mobile Menu
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
         });
+      });
 
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+      // Navbar Scroll Effect
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
         });
+      }, observerOptions);
 
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
+      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+        observer.observe(el);
+      });
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+      // Counter animation for stats
+      function animateCounter(element) {
+        const target = parseInt(element.getAttribute("data-target"));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            element.textContent =
+              target.toLocaleString() +
+              (element.parentElement
+                .querySelector(".stat-label")
+                .textContent.includes("Rate")
+                ? "%"
+                : "+");
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current).toLocaleString();
+          }
+        }, 16);
+      }
+
+      // Trigger counter animation when stats section is visible
+      const statsObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counters = entry.target.querySelectorAll(".stat-number");
+              counters.forEach((counter) => {
+                if (counter.textContent === "0") {
+                  animateCounter(counter);
+                }
+              });
             }
-        });
+          });
+        },
+        { threshold: 0.5 },
+      );
 
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Counter animation for stats
-        function animateCounter(element) {
-            const target = parseInt(element.getAttribute('data-target'));
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
-
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    element.textContent = target.toLocaleString() + (element.parentElement.querySelector('.stat-label').textContent.includes('Rate') ? '%' : '+');
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current).toLocaleString();
-                }
-            }, 16);
-        }
-
-        // Trigger counter animation when stats section is visible
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.stat-number');
-                    counters.forEach(counter => {
-                        if (counter.textContent === '0') {
-                            animateCounter(counter);
-                        }
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
+      const statsSection = document.querySelector(".stats");
+      if (statsSection) {
+        statsObserver.observe(statsSection);
+      }
     </script>
-</body>
+  </body>
 </html>

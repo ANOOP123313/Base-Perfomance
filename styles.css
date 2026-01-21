@@ -49,9 +49,7 @@ body {
     color: #4299e1;
 }
 
-.logo {
-    width: 150px;
-}
+
 
 /* =========================
    HERO IMAGE CAROUSEL
@@ -486,7 +484,11 @@ button:active {
 }
 
 .logo {
-    width: 70px;
+    max-width: 300px;
+    width: 150px;
+}
+.logo img{
+    width:200%;
 }
 
 /* =========================
