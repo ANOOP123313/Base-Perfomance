@@ -148,7 +148,7 @@
 
       .contact-card {
         background: white;
-        padding: 40px;
+        padding: 60px;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(66, 153, 225, 0.1);
         text-align: center;
@@ -638,32 +638,179 @@
         background: #3182ce;
       }
 
-      @media (max-width: 768px) {
+      /* Extra Small Devices */
+      @media (max-width: 480px) {
+        .navbar {
+          padding: 0;
+        }
+
+        .navbar .max-w-7xl {
+          padding: 1rem 1.25rem;
+        }
+
+        .hero {
+          padding: 120px 15px 60px;
+        }
+
         .hero h1 {
-          font-size: 2.5rem;
+          font-size: 1.75rem;
         }
 
         .hero p {
-          font-size: 1.1rem;
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+
+        .container {
+          padding: 50px 15px;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .contact-card {
+          padding: 25px 15px;
+        }
+
+        .contact-icon {
+          font-size: 2.2rem;
+          margin-bottom: 12px;
+        }
+
+        .contact-card h3 {
+          font-size: 1.2rem;
+        }
+
+        .form-wrapper {
+          margin: 0 -15px;
+          padding: 0 15px;
         }
 
         .form-section {
-          padding: 40px 20px;
+          padding: 25px 15px;
+          border-radius: 12px;
+        }
+
+        .form-section::before {
+          height: 4px;
         }
 
         .form-section h2 {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+        }
+
+        .form-group {
+          margin-bottom: 15px;
+        }
+
+        .form-group label {
+          font-size: 0.9rem;
+          margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+          padding: 10px 12px;
+          font-size: 0.95rem;
+          border-radius: 6px;
+        }
+
+        .submit-btn {
+          padding: 12px;
+          font-size: 1rem;
+        }
+
+        .map-section {
+          padding: 40px 15px;
+        }
+
+        .map-title {
+          font-size: 1.75rem;
+          margin-bottom: 10px;
+        }
+
+        .map-subtitle {
+          font-size: 0.95rem;
+          margin-bottom: 25px;
+        }
+
+        .location-details {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .location-card {
+          padding: 20px;
+        }
+
+        .location-card i {
           font-size: 2rem;
+          margin-bottom: 10px;
+        }
+
+        .location-card h3 {
+          font-size: 1rem;
+        }
+
+        .location-card p {
+          font-size: 0.85rem;
+        }
+      }
+        .hero h1 {
+          font-size: 2rem;
+          padding: 0 10px;
+        }
+
+        .hero p {
+          font-size: 1rem;
+          padding: 0 15px;
+        }
+
+        .form-section {
+          padding: 30px 20px;
+          margin: 0 10px;
+        }
+
+        .form-section h2 {
+          font-size: 1.75rem;
+        }
+
+        .form-subtitle {
+          font-size: 0.95rem;
+          margin-bottom: 25px;
+        }
+
+        .form-group {
+          margin-bottom: 18px;
+        }
+
+        .contact-grid {
+          gap: 20px;
+          padding: 0 10px;
+        }
+
+        .contact-card {
+          padding: 30px 20px;
+          border-radius: 12px;
+        }
+
+        .contact-icon {
+          font-size: 2.5rem;
         }
 
         /* Mobile Footer */
         .main-footer {
-          padding: 50px 1rem 20px;
+          padding: 40px 1rem 20px;
         }
 
         .footer-grid {
           grid-template-columns: 1fr;
           gap: 2rem;
-          padding-bottom: 30px;
+          padding-bottom: 20px;
         }
 
         .footer-col {
@@ -672,29 +819,37 @@
 
         .footer-col:last-child {
           flex-direction: row;
-          gap: 2rem;
-        }
-
-        .footer-logo {
-          font-size: 1.2rem;
-          margin-bottom: 0.75rem;
-        }
-
-        .footer-desc {
-          font-size: 0.8rem;
-          margin-bottom: 1rem;
-        }
-
-        .social-icons {
+          gap: 1.5rem;
           justify-content: center;
         }
 
+        .footer-logo {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .footer-desc {
+          font-size: 0.75rem;
+          margin-bottom: 1rem;
+          padding: 0 10px;
+        }
+
+        .social-icons {
+          gap: 1rem;
+        }
+
+        .social-icons i {
+          font-size: 1rem;
+        }
+
         .promo-qr {
-          margin: 0;
+          width: 70px;
+          height: 70px;
         }
 
         .footer-bottom {
-          font-size: 0.7rem;
+          font-size: 0.65rem;
+          padding: 0 10px;
         }
       }
     </style>
@@ -722,7 +877,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-black">
+                <button id="mobile-menu-btn" class="md:hidden text-white">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -730,9 +885,9 @@
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+            <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-gray-800 mt-0 pb-4 px-6 py-4 w-full z-40">
                 <a href="index.html" class="block text-white hover:text-blue-500 py-2 transition-colors">Home</a>
-                <a href="Aboutus.html" class="text-white hover:text-blue transition-colors">About Us</a>
+                <a href="Aboutus.html" class="block text-white hover:text-blue-500 py-2 transition-colors">About Us</a>
                 <a href="contactus.html" class="block text-white hover:text-blue-500 py-2 transition-colors">Contact Us</a>
                 <button
                   onclick="window.location.href='#'; return false;"
