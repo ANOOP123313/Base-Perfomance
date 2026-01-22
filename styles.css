@@ -429,6 +429,7 @@ button:active {
     font-size: 0.85rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 .footer-col h4 {
@@ -1005,3 +1006,5 @@ button:active {
         font-size: 1rem;
     }
 }
+
+
